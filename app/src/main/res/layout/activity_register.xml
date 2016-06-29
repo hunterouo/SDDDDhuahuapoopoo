@@ -45,21 +45,8 @@
             android:hint="請輸入密碼"
             android:inputType="textPassword"
             android:linksClickable="false" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="請確認密碼:"
-            android:id="@+id/textView3" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="30"
-            android:id="@+id/editText5"
-            android:hint="請再次輸入密碼"
-            android:inputType="textPassword"
-            android:linksClickable="false" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

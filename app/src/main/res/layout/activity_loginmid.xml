@@ -7,10 +7,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.wang.huntergod.loginActivity"
-    android:background="@drawable/loginpage">
-
-
+    tools:context="com.example.wang.huntergod.loginmidActivity"
+    android:background="@drawable/loginpage"
+    >
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -21,7 +20,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="58dp"
-            android:layout_weight="0.30"></LinearLayout>
+            android:layout_weight="0.26"></LinearLayout>
 
         <EditText
             android:layout_width="match_parent"
@@ -41,31 +40,16 @@
             android:layout_weight="0.03"
             android:hint="密碼" />
 
-        <FrameLayout
+        <Button
             android:layout_width="match_parent"
-            android:layout_height="86dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.33">
+            android:layout_height="wrap_content"
+            android:text="登入"
+            android:id="@+id/button5"
+            android:background="#eb2e2e"
+            android:textColor="#ffffff"
+            />
 
-            <Button
-                android:layout_width="128dp"
-                android:layout_height="wrap_content"
-                android:text="登入"
-                android:id="@+id/button2"
-                android:background="#eb2e2e"
-                android:layout_gravity="right|top"
-                android:textColor="#ffffff"
-                />
-
-            <Button
-                android:layout_width="128dp"
-                android:layout_height="wrap_content"
-                android:text="我要註冊"
-                android:id="@+id/button1"
-                android:layout_gravity="left|top"
-                android:background="#00ffdd" />
-
-        </FrameLayout>
 
     </LinearLayout>
+
 </RelativeLayout>
