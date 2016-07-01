@@ -89,21 +89,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="選擇"
-        android:id="@+id/button_choose"
         style="@style/RDButton"
         android:layout_alignTop="@+id/textView31"
         android:layout_toRightOf="@+id/textView31"
-        android:layout_toEndOf="@+id/textView31" />
+        android:layout_toEndOf="@+id/textView31"
+        android:id="@+id/buttonLoadPicture"
+        android:layout_gravity="center"
+        android:layout_weight="0"
+        android:onClick="loadImagefromGallery"
+       />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:id="@+id/imageView"
-        android:layout_below="@+id/button_choose"
+        android:id="@+id/imgView"
+        android:layout_below="@+id/buttonLoadPicture"
         android:layout_alignLeft="@+id/textView31"
         android:layout_alignStart="@+id/textView31"
         android:layout_alignRight="@+id/spinner4"
         android:layout_alignEnd="@+id/spinner4"
-        android:background="#ffffff"/>
+        />
 
 </RelativeLayout>
