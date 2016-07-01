@@ -4,19 +4,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_information"
-            android:icon="@drawable/ic_person_black_24dp"
+            android:icon="@drawable/user"
             android:title="中途資訊" />
         <item
             android:id="@+id/nav_catinfor"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/cat"
             android:title="貓咪資訊" />
         <item
             android:id="@+id/nav_videoupload"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/video"
             android:title="影片上傳" />
         <item
             android:id="@+id/nav_videoget"
-            android:icon="@drawable/ic_star_black_24dp"
+            android:icon="@drawable/reward"
             android:title="收穫分享" />
     </group>
 

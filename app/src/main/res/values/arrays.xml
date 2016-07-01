@@ -13,4 +13,9 @@
     <item>1998</item>
     <item>1999</item>
     </string-array>
+    <string-array name="adapt">
+        <item>已領養</item>
+        <item>等待中</item>
+
+    </string-array>
 </resources>
