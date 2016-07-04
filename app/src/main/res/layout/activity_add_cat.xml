@@ -16,7 +16,9 @@
         android:layout_width="fill_parent"
         android:layout_height="50px"
         android:layout_alignParentTop="true"
-        android:id="@+id/space11" />
+        android:id="@+id/space11"
+        android:layout_alignRight="@+id/imgView"
+        android:layout_alignEnd="@+id/imgView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -109,5 +111,15 @@
         android:layout_alignRight="@+id/spinner4"
         android:layout_alignEnd="@+id/spinner4"
         />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="完成"
+        android:id="@+id/button20"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/editText8"
+        android:layout_toEndOf="@+id/editText8" />
 
 </RelativeLayout>
