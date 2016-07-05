@@ -1,31 +1,27 @@
 package com.example.wang.huntergod;
 
-
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 /**
- * A simple {@link Fragment} subclass.
+ * Created by wang on 2016/7/5.
  */
-public class videouploadFragment extends Fragment {
-
-
+public class TabFragment extends Fragment{
     public static TabLayout tabLayout;
     public static ViewPager viewPager;
-    public static int int_items = 5 ;
+    public static int int_items = 3 ;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         /**
          *Inflate tab_layout and setup Views.
          */
-        View x =  inflater.inflate(R.layout.fragment_videoupload,null);
+        View x =  inflater.inflate(R.layout.tab_layout,null);
         tabLayout = (TabLayout) x.findViewById(R.id.tabs);
         viewPager = (ViewPager) x.findViewById(R.id.viewpager);
 
@@ -67,8 +63,6 @@ public class videouploadFragment extends Fragment {
                 case 0 : return new FeedFragment();
                 case 1 : return new CleanpooFragment();
                 case 2 : return new PlayFragment();
-                case 3 : return new ShowerFragment();
-                case 4 : return new BrushFragment();
             }
             return null;
         }
@@ -84,18 +78,12 @@ public class videouploadFragment extends Fragment {
 
             switch (position){
                 case 0 :
-                    return "餵食";
+                    return "Primary";
                 case 1 :
-                    return "清便便";
+                    return "Social";
                 case 2 :
-                    return "玩樂";
-                case 3 :
-                    return "洗澡";
-                case 4 :
-                    return "梳毛";
+                    return "Updates";
             }
             return null;
         }
-    }
-
-}
+}}

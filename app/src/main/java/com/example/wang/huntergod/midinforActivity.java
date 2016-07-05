@@ -2,22 +2,29 @@ package com.example.wang.huntergod;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.WindowManager;
 
 
 public class midinforActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    DrawerLayout mDrawerLayout;
+    NavigationView mNavigationView;
+    FragmentManager mFragmentManager;
+    FragmentTransaction mFragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_midinfor);
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
 
@@ -37,6 +44,9 @@ public class midinforActivity extends AppCompatActivity
         toolbar.setTitle("APP");
 
         setSupportActionBar(toolbar);
+
+        mFragmentManager = getSupportFragmentManager();
+        mFragmentTransaction = mFragmentManager.beginTransaction();
 
 
 
@@ -78,6 +88,7 @@ public class midinforActivity extends AppCompatActivity
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
+
             Toolbar toolbar = null;
             toolbar = (Toolbar) findViewById(R.id.toolbar);
             toolbar.setTitle("中途資訊");
@@ -94,11 +105,14 @@ public class midinforActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_videoupload) {
-            videouploadFragment fragment = new videouploadFragment();
+            videouploadFragment videouploadFragment = new videouploadFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.replace(R.id.fragment_container, videouploadFragment);
             fragmentTransaction.commit();
+
+           // mFragmentTransaction.replace(R.id.fragment_container,new TabFragment()).commit();
+
             Toolbar toolbar = null;
             toolbar = (Toolbar) findViewById(R.id.toolbar);
             toolbar.setTitle("影片上傳");

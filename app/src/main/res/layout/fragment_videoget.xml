@@ -8,15 +8,7 @@
     android:weightSum="1">
 
     <!-- TODO: Update blank fragment layout -->
-    <ImageView
 
-        android:layout_width="fill_parent"
-
-        android:layout_height="47dp"
-
-        android:background="#FFFFFF"
-
-        />
 
 
 
