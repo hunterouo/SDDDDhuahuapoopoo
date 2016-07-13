@@ -21,42 +21,17 @@ public class catinforFragment2 extends ListFragment {
     public catinforFragment2() {
         // Required empty public constructor
     }
-    String[] name ={"India","Pakistan",  "Sri Lanka",  "China",  "Bangladesh",  "Nepal", "Afghanistan","North Korea","South Korea", "Japan"};
+    String[] name ={
+
+    };
     int[] cat = {
-            R.drawable.cat,
-            R.drawable.cat,
-            R.drawable.cat,
-            R.drawable.cat,
-            R.drawable.cat,
-            R.drawable.cat,
-            R.drawable.cat,
-            R.drawable.cat,
-            R.drawable.cat,
-            R.drawable.cat,
+
     };
-    String[] sex = new String[]{
-            "Indian Rupee",
-            "Pakistani Rupee",
-            "Sri Lankan Rupee",
-            "Renminbi",
-            "Bangladeshi Taka",
-            "Nepalese Rupee",
-            "Afghani",
-            "North Korean Won",
-            "South Korean Won",
-            "Japanese Yen"
+    String[] sex ={
+
     };
-    String[] adopt = new String[]{
-            "已領養",
-            "未領養",
-            "已領養",
-            "未領養",
-            "已領養",
-            "未領養",
-            "已領養",
-            "未領養",
-            "已領養",
-            "未領養"
+    String[] adopt ={
+
     };
     ArrayList<HashMap<String,String>> data=new ArrayList<HashMap<String, String>>();
     SimpleAdapter adapter;
