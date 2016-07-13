@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/catgrow"
+            android:icon="@drawable/ic_game"
+            android:title="貓咪養成" />
+        <item
+            android:id="@+id/catinfor"
+            android:icon="@drawable/ic_information"
+            android:title="貓咪資訊" />
+        <item
+            android:id="@+id/collect"
+            android:icon="@drawable/ic_accumulate"
+            android:title="累積集點" />
+        <item
+            android:id="@+id/videocollection"
+            android:icon="@drawable/ic_video"
+            android:title="影片收藏" />
+        <item
+            android:id="@+id/videoget"
+            android:icon="@drawable/ic_reward"
+            android:title="收穫分享" />
+    </group>
+    <item
+        android:id="@+id/logout"
+        android:title="登出"></item>
+
+
+</menu>

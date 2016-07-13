@@ -11,7 +11,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".firstActivity">
+        <activity
+            android:name=".firstActivity"
+            android:label="@string/app_name" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +31,18 @@
         <activity android:name=".editmidinforActivity" />
         <activity android:name=".AddCatActivity" />
         <activity android:name=".FixCatActivity" />
-        <activity android:name=".AddvideoGetActivity"></activity>
+        <activity android:name=".AddvideoGetActivity" />
+        <activity android:name=".GuideActivity" />
+        <activity android:name=".ChooseActivity" />
+        <activity android:name=".Choose2Activity" />
+        <activity android:name=".Choose3Activity" />
+        <activity
+            android:name=".GameActivity"
+            android:label="@string/title_activity_game"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Video_ChooseActivity" />
+        <activity android:name=".Choose4Activity" />
+        <activity android:name=".catinforActivity"></activity>
     </application>
 
 </manifest>

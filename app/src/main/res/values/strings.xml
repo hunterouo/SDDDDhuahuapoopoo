@@ -2,6 +2,7 @@
     <string name="app_name">NavigationGod</string>
     <string name="spinner_prompt">birthday</string>
     <string name="title_activity_midinfor">midinforActivity</string>
+    <string name="title_activity_game">GameActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

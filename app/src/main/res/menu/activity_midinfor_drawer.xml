@@ -19,6 +19,9 @@
             android:icon="@drawable/reward"
             android:title="收穫分享" />
     </group>
+        <item
+            android:id="@+id/logout"
+            android:title="登出"></item>
 
 
 

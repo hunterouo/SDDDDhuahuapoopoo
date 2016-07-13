@@ -1,5 +1,6 @@
 package com.example.wang.huntergod;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -94,11 +95,14 @@ public class midinforActivity extends AppCompatActivity
             toolbar.setTitle("中途資訊");
 
         } else if (id == R.id.nav_catinfor) {
-            catinforFragment fragment = new catinforFragment();
+           catinforFragment fragment = new catinforFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
+            /*Intent intent = new Intent();
+            intent.setClass(this , catinforActivity.class);
+            startActivity(intent);*/
             Toolbar toolbar = null;
             toolbar = (Toolbar) findViewById(R.id.toolbar);
             toolbar.setTitle("貓咪資訊");
@@ -129,9 +133,15 @@ public class midinforActivity extends AppCompatActivity
             toolbar.setTitle("收穫分享");
 
         }
+        else if(id == R.id.logout){
+            Intent intent = new Intent();
+            intent.setClass(this,firstActivity.class);
+            startActivity(intent);
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <item android:drawable="@drawable/box_shake01" android:duration="200" />
+    <item android:drawable="@drawable/box_shake02" android:duration="200" />
+    <item android:drawable="@drawable/box_shake03" android:duration="200" />
+    <item android:drawable="@drawable/box_shake04" android:duration="200" />
+    <item android:drawable="@drawable/box_shake05" android:duration="200" />
+    <item android:drawable="@drawable/box_shake06" android:duration="200" />
+    <item android:drawable="@drawable/box_shake07" android:duration="200" />
+    <item android:drawable="@drawable/box_shake08" android:duration="200" />
+    <item android:drawable="@drawable/open01" android:duration="10" />
+    <item android:drawable="@drawable/open02" android:duration="10" />
+    <item android:drawable="@drawable/open03" android:duration="10" />
+    <item android:drawable="@drawable/open04" android:duration="10" />
+    <item android:drawable="@drawable/open05" android:duration="10" />
+    <item android:drawable="@drawable/open06" android:duration="10" />
+    <item android:drawable="@drawable/bomb01" android:duration="10" />
+    <item android:drawable="@drawable/bomb02" android:duration="10" />
+    <item android:drawable="@drawable/bomb03" android:duration="10" />
+    <item android:drawable="@drawable/bomb04" android:duration="10" />
+    <item android:drawable="@drawable/bomb05" android:duration="10" />
+    <item android:drawable="@drawable/bomb06" android:duration="10" />
+    <item android:drawable="@drawable/browncat01" android:duration="10" />
+    <item android:drawable="@drawable/browncat02" android:duration="10" />
+    <item android:drawable="@drawable/browncat03" android:duration="1000" />
+
+
+</animation-list>

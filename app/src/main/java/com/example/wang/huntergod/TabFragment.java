@@ -25,6 +25,7 @@ public class TabFragment extends Fragment{
         tabLayout = (TabLayout) x.findViewById(R.id.tabs);
         viewPager = (ViewPager) x.findViewById(R.id.viewpager);
 
+
         /**
          *Set an Apater for the View Pager
          */
