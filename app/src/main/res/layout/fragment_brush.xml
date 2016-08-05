@@ -8,4 +8,11 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上傳"
+        android:id="@+id/button12"
+        style="@style/RDButton"
+        android:layout_gravity="right|top" />
 </FrameLayout>

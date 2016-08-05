@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="150dp"
+    android:background="@mipmap/tip_brush"
+    android:orientation="vertical">
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="60dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="187dp"
+        android:layout_marginTop="101dp"
+        android:text="O K"
+        android:id="@+id/brush_OK_bt"
+        />
+</RelativeLayout>

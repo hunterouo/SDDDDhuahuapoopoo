@@ -34,15 +34,22 @@
         <activity android:name=".AddvideoGetActivity" />
         <activity android:name=".GuideActivity" />
         <activity android:name=".ChooseActivity" />
-        <activity android:name=".Choose2Activity" />
-        <activity android:name=".Choose3Activity" />
+        <activity android:name=".End" />
         <activity
             android:name=".GameActivity"
             android:label="@string/title_activity_game"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Video_ChooseActivity" />
+        <activity android:name=".catinforActivity" />
+        <activity android:name=".Choose2Activity" />
+        <activity android:name=".Choose3Activity" />
         <activity android:name=".Choose4Activity" />
-        <activity android:name=".catinforActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Game_video_play" />
+        <activity android:name=".Game_video_cleanpoo" />
+        <activity android:name=".Game_video_brush" />
+        <activity android:name=".Game_video_feed" />
+        <activity android:name=".Game_video_shower"></activity>
     </application>
 
 </manifest>

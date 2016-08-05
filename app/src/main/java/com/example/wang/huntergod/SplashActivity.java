@@ -1,5 +1,6 @@
 package com.example.wang.huntergod;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ import android.view.WindowManager;
 /**
  * Created by wang on 2016/7/7.
  */
-public class SplashActivity extends firstActivity {
+public class SplashActivity extends Activity {
 
     boolean isFirstIn = false;
 
@@ -69,7 +70,7 @@ public class SplashActivity extends firstActivity {
     }
 
     private void goHome() {
-        Intent intent = new Intent(SplashActivity.this, GameActivity.class);
+        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
         SplashActivity.this.startActivity(intent);
         SplashActivity.this.finish();
     }

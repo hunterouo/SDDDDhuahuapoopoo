@@ -1,5 +1,6 @@
 package com.example.wang.huntergod;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -15,7 +16,7 @@ import java.util.List;
 /**
  * Created by wang on 2016/7/7.
  */
-public class GuideActivity extends firstActivity implements ViewPager.OnPageChangeListener {
+public class GuideActivity extends Activity implements ViewPager.OnPageChangeListener {
 
     private ViewPager vp;
     private ViewPagerAdapter vpAdapter;

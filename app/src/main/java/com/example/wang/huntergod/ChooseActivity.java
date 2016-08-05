@@ -21,7 +21,7 @@ public class ChooseActivity extends AppCompatActivity {
     private int mPosition = 0;
 
     private static final String[] TEXTS = { "灰灰白白貓", "皮卡貓", "稀有品種" };
-    private int[] imgRes=new int[]{R.drawable.cat1,R.drawable.cat2,R.drawable.cat3,R.drawable.cat4};
+    private int[] imgRes=new int[]{R.drawable.cat1,R.drawable.cat2,R.drawable.cat3};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +55,13 @@ public class ChooseActivity extends AppCompatActivity {
                 return imageView;
             }
         });
-        mImageSwitcher.setInAnimation(this, android.R.anim.slide_in_left);
-        mImageSwitcher.setOutAnimation(this, android.R.anim.slide_out_right);
+        mImageSwitcher.setInAnimation(this, android.R.anim.fade_in);
+        mImageSwitcher.setOutAnimation(this, android.R.anim.fade_out);
 
         onSwitch(null);
         preSwitch(null);
+
+
 
 
         bt1.setOnClickListener(new Button.OnClickListener() {
@@ -88,6 +90,7 @@ public class ChooseActivity extends AppCompatActivity {
 
 
     }
+
     public void onSwitch(View view) {
         mTextSwitcher.setText(TEXTS[mPosition]);
         mImageSwitcher.setBackgroundResource(imgRes[mPosition]);
@@ -100,4 +103,26 @@ public class ChooseActivity extends AppCompatActivity {
     }
 
 }
+
+
+/*int duration = 0;
+
+                    for(int i=0;i<ad.getNumberOfFrames();i++){
+
+                        duration += ad.getDuration(i);
+
+                    }
+
+                    Handler handler = new Handler();
+
+                    handler.postDelayed(new Runnable() {
+
+                        public void run() {
+
+                            Intent intent = new Intent(ChooseActivity.this,firstActivity.class);
+                            startActivity(intent);
+
+                        }
+
+                    }, duration);*/
 

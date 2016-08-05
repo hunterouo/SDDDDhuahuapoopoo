@@ -1,10 +1,10 @@
 package com.example.wang.huntergod;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 
 public class Choose2Activity extends AppCompatActivity {
@@ -13,16 +13,29 @@ public class Choose2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_choose2);
         iv= (ImageView) findViewById(R.id.image);
 
-        AnimationDrawable ad = (AnimationDrawable) getResources().getDrawable(
-                R.drawable.shaking_cat1);
-        iv.setBackgroundDrawable(ad);
+        iv.setBackgroundResource(R.drawable.shaking_cat1);
+        AnimationDrawable ad= (AnimationDrawable) iv.getBackground();
         ad.start();
+        int duration = 0;
 
+        for(int i=0;i<ad.getNumberOfFrames();i++){
 
+        duration += ad.getDuration(i);
+        }
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+
+        public void run() {
+             Intent intent = new Intent(Choose2Activity.this,MainActivity.class);
+             startActivity(intent);
+
+             }
+
+             }, duration);
     }
 }
+
