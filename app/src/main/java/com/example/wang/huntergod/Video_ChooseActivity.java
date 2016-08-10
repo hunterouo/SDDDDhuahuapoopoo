@@ -1,72 +1,156 @@
 package com.example.wang.huntergod;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.VideoView;
 
-public class Video_ChooseActivity extends AppCompatActivity {
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+public class Video_ChooseActivity extends Activity {
+    Button choose= (Button) findViewById(R.id.button_video);
+    Button complete=(Button)findViewById(R.id.button16);
+    private static final int SELECT_AUDIO = 2;
+    String selectedPath = "";
+    public void onClick(View v) {
+        if (v == choose) {
+            openGalleryAudio();
+        }
+        if(v == complete){
+            doFileUpload();
+
+        }
+    }
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video__choose);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        Button b = (Button)this.findViewById(R.id.button_video);
-
-        b.setOnClickListener( new Button.OnClickListener(){
-            public void onClick(View arg0) {
-                // TODO Auto-generated method stub
-
-                // 建立 "選擇檔案 Action" 的 Intent
-                Intent intent = new Intent( Intent.ACTION_PICK );
-
-                // 過濾檔案格式
-                intent.setType( "video/*" );
-
-                // 建立 "檔案選擇器" 的 Intent  (第二個參數: 選擇器的標題)
-                Intent destIntent = Intent.createChooser( intent, "選擇檔案" );
-
-                // 切換到檔案選擇器 (它的處理結果, 會觸發 onActivityResult 事件)
-                startActivityForResult( destIntent, 0 );
-            }
-        });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void openGalleryAudio(){
 
-        // TODO Auto-generated method stub
-        super.onActivityResult(requestCode, resultCode, data);
+        Intent intent = new Intent();
+        intent.setType("audio/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent,"Select Audio "), SELECT_AUDIO);
+    }
 
-        // 有選擇檔案
-        if ( resultCode == RESULT_OK )
-        {
-            // 取得檔案的 Uri
-            Uri uri = data.getData();
-            if( uri != null )
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (resultCode == RESULT_OK) {
+
+            if (requestCode == SELECT_AUDIO)
             {
-                // 利用 Uri 顯示 ImageView 圖片
-                VideoView iv = (VideoView)this.findViewById(R.id.videoView01);
-                iv.setVideoURI( uri );
+                System.out.println("SELECT_AUDIO");
+                Uri selectedImageUri = data.getData();
+                selectedPath = getPath(selectedImageUri);
+                System.out.println("SELECT_AUDIO Path : " + selectedPath);
+                doFileUpload();
+            }
 
-                setTitle( uri.toString() );
-            }
-            else
-            {
-                setTitle("無效的檔案路徑 !!");
-            }
         }
-        else
+    }
+
+    public String getPath(Uri uri) {
+        String[] projection = { MediaStore.Images.Media.DATA };
+        Cursor cursor = managedQuery(uri, projection, null, null, null);
+        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        cursor.moveToFirst();
+        return cursor.getString(column_index);
+    }
+
+    private void doFileUpload(){
+        HttpURLConnection conn = null;
+        DataOutputStream dos = null;
+        DataInputStream inStream = null;
+        String lineEnd = "rn";
+        String twoHyphens = "--";
+        String boundary =  "*****";
+        int bytesRead, bytesAvailable, bufferSize;
+        byte[] buffer;
+        int maxBufferSize = 1*1024*1024;
+        String responseFromServer = "";
+        String urlString = "http://163.13.201.93/video/upload.php";
+        try
         {
-            setTitle("取消選擇檔案 !!");
+            //------------------ CLIENT REQUEST
+            FileInputStream fileInputStream = new FileInputStream(new File(selectedPath) );
+            // open a URL connection to the Servlet
+            URL url = new URL(urlString);
+            // Open a HTTP connection to the URL
+            conn = (HttpURLConnection) url.openConnection();
+            // Allow Inputs
+            conn.setDoInput(true);
+            // Allow Outputs
+            conn.setDoOutput(true);
+            // Don't use a cached copy.
+            conn.setUseCaches(false);
+            // Use a post method.
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Connection", "close");
+            conn.setRequestProperty("Content-Type", "multipart/form-data;boundary="+boundary);
+            dos = new DataOutputStream( conn.getOutputStream() );
+            dos.writeBytes(twoHyphens + boundary + lineEnd);
+            dos.writeBytes("Content-Disposition: form-data; name:\"uploadedfile\";filename=\"" + selectedPath + "\"" + lineEnd);
+            dos.writeBytes(lineEnd);
+            // create a buffer of maximum size
+            bytesAvailable = fileInputStream.available();
+            bufferSize = Math.min(bytesAvailable, maxBufferSize);
+            buffer = new byte[bufferSize];
+            // read file and write it into form...
+            bytesRead = fileInputStream.read(buffer, 0, bufferSize);
+            while (bytesRead > 0)
+            {
+                dos.write(buffer, 0, bufferSize);
+                bytesAvailable = fileInputStream.available();
+                bufferSize = Math.min(bytesAvailable, maxBufferSize);
+                bytesRead = fileInputStream.read(buffer, 0, bufferSize);
+            }
+            // send multipart form data necesssary after file data...
+            dos.writeBytes(lineEnd);
+            dos.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
+            // close streams
+            Log.e("Debug","File is written");
+            fileInputStream.close();
+            dos.flush();
+            dos.close();
+        }
+        catch (MalformedURLException ex)
+        {
+            Log.e("Debug", "error: " + ex.getMessage(), ex);
+        }
+        catch (IOException ioe)
+        {
+            Log.e("Debug", "error: " + ioe.getMessage(), ioe);
+        }
+        //------------------ read the SERVER RESPONSE
+        try {
+            inStream = new DataInputStream ( conn.getInputStream() );
+            String str;
+
+            while (( str = inStream.readLine()) != null)
+            {
+                Log.e("Debug","Server Response "+str);
+            }
+            inStream.close();
+
+        }
+        catch (IOException ioex){
+            Log.e("Debug", "error: " + ioex.getMessage(), ioex);
         }
     }
 

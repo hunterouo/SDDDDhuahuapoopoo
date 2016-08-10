@@ -72,7 +72,17 @@ public class midinforActivity extends AppCompatActivity
         }
     }
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent resultData) {
+        if (resultCode == 1001) {
+            Bundle data = new Bundle();//Use bundle to pass data
+            data.putString("homename",  resultData.getStringExtra("homename"));
+            data.putString("email",  resultData.getStringExtra("email"));
+            data.putString("address",  resultData.getStringExtra("address"));
+            data.putString("html",  resultData.getStringExtra("html"));
+            ((inforFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_container)).setTextView(data);
+        }
+    }
 
     
     @SuppressWarnings("StatementWithEmptyBody")
