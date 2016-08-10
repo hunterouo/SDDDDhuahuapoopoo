@@ -389,13 +389,14 @@ public class MainActivity extends AppCompatActivity {
 
                     status[1]=10;
                 } else {
-                    Intent intent=new Intent();
+                   /* Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_shower.class);
-                    startActivity(intent);
+                    startActivity(intent);*/
                     status[1]++;
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
                 }
+                uadateData();
 
             }
         });
@@ -427,6 +428,7 @@ public class MainActivity extends AppCompatActivity {
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
                 }
+                uadateData();
             }
         });
 
@@ -452,38 +454,39 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } else if (poo_3.getVisibility()==View.VISIBLE){
-                    Intent intent=new Intent();
+                    /*Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_cleanpoo.class);
-                    startActivity(intent);
+                    startActivity(intent);*/
                     poo_3.setVisibility(View.INVISIBLE);
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
 
                 }else if (poo_2.getVisibility()==View.VISIBLE){
-                    Intent intent=new Intent();
+                   /* Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_cleanpoo.class);
-                    startActivity(intent);
+                    startActivity(intent);*/
                     poo_2.setVisibility(View.INVISIBLE);
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
 
                 }else if(poo_4.getVisibility()==View.VISIBLE){
-                    Intent intent=new Intent();
+                    /*Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_cleanpoo.class);
-                    startActivity(intent);
+                    startActivity(intent);*/
                     poo_4.setVisibility(View.INVISIBLE);
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
 
                 }else if(poo_1.getVisibility()==View.VISIBLE){
-                    Intent intent=new Intent();
+                    /*Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_cleanpoo.class);
-                    startActivity(intent);
+                    startActivity(intent);*/
                     poo_1.setVisibility(View.INVISIBLE);
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
 
                 }
+                uadateData();
             }
         });
         brush_btn.setOnClickListener(new ImageButton.OnClickListener() {
@@ -507,9 +510,9 @@ public class MainActivity extends AppCompatActivity {
 
                     status[1]=10;
                 } else {
-                    Intent intent=new Intent();
+                    /*Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_brush.class);
-                    startActivity(intent);
+                    startActivity(intent);*/
                     status[1]++;
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
