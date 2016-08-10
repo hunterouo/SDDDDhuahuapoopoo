@@ -22,8 +22,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="選擇影片"
+                android:id="@+id/button16"
+                android:layout_gravity="right" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="選擇影片"
                 android:id="@+id/button_video"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="right" />
 
             <VideoView
                 android:layout_width="match_parent"
