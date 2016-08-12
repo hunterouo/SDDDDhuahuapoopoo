@@ -6,9 +6,9 @@
     tools:context=".Choose3Activity">
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/image_choose3"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-         />
+       />
 
 </RelativeLayout>

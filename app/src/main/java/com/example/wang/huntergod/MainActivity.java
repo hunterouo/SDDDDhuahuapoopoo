@@ -15,6 +15,8 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -27,6 +29,7 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     private MediaPlayer mp;//背景音樂
+    ImageButton questionBt;
     ImageView animation_iv, score_test, poo_1,poo_2,poo_3,poo_4;
     TextView score_happy;
     ImageButton eat_btn,bath_btn,play_btn,brush_btn,poopoo_btn;
@@ -522,8 +525,71 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        questionBt= (ImageButton) findViewById(R.id.direction_imageButton);
+
+        questionBt.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final Dialog direction_dialog = new Dialog(MainActivity.this, R.style.DialogTheme);
+                direction_dialog.setContentView(R.layout.direction_dialog);
+                Button q_OK = (Button) direction_dialog.findViewById(R.id.direction_OKbutton);
+                direction_dialog.show();
+
+                q_OK.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // Close dialog
+                        direction_dialog.dismiss();
+                    }
+                });
+
+            }
+        });
 
 
+
+
+
+    }
+    @Override
+
+    public boolean onCreateOptionsMenu(Menu menu){
+
+        super.onCreateOptionsMenu(menu);
+
+        menu.add(0,0,0,"選單");
+
+        menu.add(0,1,0,"離開");
+
+        return true;
+
+    }
+    @Override
+
+    public boolean onOptionsItemSelected(MenuItem item){
+
+        super.onOptionsItemSelected(item);
+
+        switch(item.getItemId()){
+
+            case 0:
+
+                Intent intent = new Intent();
+
+                intent.setClass(MainActivity.this,GameActivity.class);
+
+                startActivity(intent);
+
+                break;
+
+            case 1:
+
+                finish();
+
+        }
+
+        return true;
 
     }
 
@@ -626,6 +692,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.cat_video);
         animation_iv.setBackgroundDrawable(ad);
         ad.start();
+
 
     }
     public void changeStatus(){

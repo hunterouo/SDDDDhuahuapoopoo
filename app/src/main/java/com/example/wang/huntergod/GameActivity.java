@@ -40,7 +40,7 @@ public class GameActivity extends AppCompatActivity
 
 
         toolbar = (Toolbar) findViewById(R.id.toolbargame);
-        toolbar.setTitle("APP");
+        toolbar.setTitle("貓咪養成");
 
         setSupportActionBar(toolbar);
 

@@ -9,16 +9,19 @@ import android.widget.ImageView;
 
 public class Choose3Activity extends AppCompatActivity {
     ImageView iv;
+    private AnimationDrawable ad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose3);
-        iv= (ImageView) findViewById(R.id.image);
+        iv= (ImageView) findViewById(R.id.image_choose3);
 
-        iv.setBackgroundResource(R.drawable.shaking_cat2);
-        AnimationDrawable ad= (AnimationDrawable) iv.getBackground();
+
+        iv.setImageResource(R.drawable.shaking_cat2);
+        ad= (AnimationDrawable) iv.getDrawable();
         ad.start();
+
 
         int duration = 0;
 

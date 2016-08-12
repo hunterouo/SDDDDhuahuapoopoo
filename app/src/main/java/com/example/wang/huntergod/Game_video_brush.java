@@ -12,4 +12,10 @@ public class Game_video_brush extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_game_video_brush);
     }
+    @Override
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+        return;
+        //super.onBackPressed();
+    }
 }

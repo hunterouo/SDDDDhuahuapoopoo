@@ -29,8 +29,7 @@ public class Game_video_feed extends Activity implements SurfaceHolder.Callback{
 
         Random rank = new Random();
         int num = rank.nextInt(4) + 1;
-
-        videoView.setVideoPath("storage/sdcard1/DCIM/video/eat/eat" + num + ".mp4");
+        videoView.setVideoPath("storage/emulated/0/Movies/eat/eat" + num + ".mp4");
         videoView.requestFocus();
         videoView.start();
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -80,4 +79,10 @@ public class Game_video_feed extends Activity implements SurfaceHolder.Callback{
     public void surfaceDestroyed(SurfaceHolder holder) {
 
     }
+   /* @Override
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+        return;
+        //super.onBackPressed();
+    }*/
 }
