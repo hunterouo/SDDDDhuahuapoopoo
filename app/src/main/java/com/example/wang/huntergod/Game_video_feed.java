@@ -1,46 +1,74 @@
 package com.example.wang.huntergod;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.SurfaceHolder;
-import android.view.WindowManager;
+import android.util.Log;
+import android.widget.MediaController;
+import android.widget.TabHost;
 import android.widget.VideoView;
+
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.Random;
 
-public class Game_video_feed extends Activity implements SurfaceHolder.Callback{
+public class Game_video_feed extends Activity {
+    TabHost th;
+    VideoView video;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
+    ProgressDialog pDialog;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_game_video_feed);
-        getWindow().setFormat(PixelFormat.UNKNOWN);
-
-        VideoView videoView = (VideoView) findViewById(R.id.videoView003);
-        //String uriPath = "android.resource://example.prgguru.com.myapplication/"+R.raw.ykzzldx;
-       /* String vidaddress =  "http://163.13.201.93";
-        Uri uri = Uri.parse(vidaddress);
-        videoView.setVideoURI(uri);
-        */
-
         Random rank = new Random();
         int num = rank.nextInt(4) + 1;
+        video = (VideoView) findViewById(R.id.videoView003);
+        String path1 = "http://163.13.201.93/video/eat/eat"+num+".mp4";
 
-        videoView.setVideoPath("storage/sdcard1/DCIM/video/eat/eat" + num + ".mp4");
-        videoView.requestFocus();
-        videoView.start();
-        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+
+        pDialog = new ProgressDialog(Game_video_feed.this);
+        // Set progressbar title
+        pDialog.setTitle("Waiting");
+        // Set progressbar message
+        pDialog.setMessage("Meow~");
+        pDialog.setIndeterminate(false);
+        pDialog.setCancelable(false);
+        // Show progressbar
+        pDialog.show();
+        // Create tabs using XML
+
+        try {
+            MediaController mc = new MediaController(this);
+            mc.setAnchorView(video);
+            mc.setMediaPlayer(video);
+            Uri uri = Uri.parse(path1);
+            //video.setMediaController(mc);
+            video.setVideoURI(uri);
+        }catch (Exception e){
+            Log.e("Error",e.getMessage());
+            e.printStackTrace();
+        }
+        video.requestFocus();
+        video.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                mp.setVolume(0, 0);
+                pDialog.dismiss();
+                video.start();
             }
         });
 
-        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        video.start();
+        video.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 Intent intent = new Intent();
@@ -50,34 +78,25 @@ public class Game_video_feed extends Activity implements SurfaceHolder.Callback{
             }
         });
 
-     /*   button.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                VideoView videoView = (VideoView) findViewById(R.id.videoView);
-                String uriPath = "android.resource://example.prgguru.com.myapplication/"+R.raw.ykzzldx;
-                Uri uri = Uri.parse(uriPath);
-                videoView.setVideoURI(uri);
-                videoView.requestFocus();
-                videoView.start();
-
-            }
-        });*/
-
-
     }
-
     @Override
-    public void surfaceCreated(SurfaceHolder holder) {
-
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+        return;
+        //super.onBackPressed();
     }
 
-    @Override
-    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
 
-    }
-
-    @Override
-    public void surfaceDestroyed(SurfaceHolder holder) {
-
-    }
 }
+
+/*videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+@Override
+public void onCompletion(MediaPlayer mp) {
+        Intent intent = new Intent();
+        intent.setClass(Game_video_play.this, MainActivity.class);
+        startActivity(intent);
+        Game_video_play.this.finish();
+        }
+        });
+        */
+

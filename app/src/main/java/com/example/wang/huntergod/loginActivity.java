@@ -124,7 +124,7 @@ public class loginActivity extends AppCompatActivity {
             Log.v("Login Result", result);
             super.onPostExecute(result);
             if(result.equals(""))
-                Toast.makeText(loginActivity.this, "something wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(loginActivity.this, "請輸入正確的帳號密碼", Toast.LENGTH_LONG).show();
             else{
 
                 Toast.makeText(loginActivity.this, "welcome", Toast.LENGTH_SHORT).show();

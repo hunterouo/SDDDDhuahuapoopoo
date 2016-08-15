@@ -36,4 +36,5 @@ dependencies {
     compile 'com.google.api-client:google-api-client-gson:+'
 
     compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }
