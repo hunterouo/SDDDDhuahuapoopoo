@@ -30,25 +30,11 @@
                 android:id="@+id/textView29"
                 android:text="性別：" />
 
-            <RadioGroup
-            android:id="@+id/sex_group"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-            <RadioButton
-            android:id="@+id/boy_ButtonGroup"
+            <EditText
+                android:layout_height="wrap_content"
+                android:id="@+id/editText9"
                 android:textSize="30dp"
-                android:layout_height="50dp"
-                android:layout_width="wrap_content"
-            android:text="公" />
-
-            <RadioButton
-            android:id="@+id/girl_ButtonGroup"
-                android:textSize="30dp"
-            android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="母" />
-
-        </RadioGroup>
+                android:hint="男/女"/>
         </TableRow>
     <TableRow>
         <TextView
@@ -57,27 +43,10 @@
             android:id="@+id/textView30"
             android:textSize="30dp"
             android:text="領養：" />
-
-        <RadioGroup
-            android:id="@+id/adopt_group"
+        <Spinner
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:orientation="horizontal" >
-            <RadioButton
-                android:id="@+id/yes_adopt_group"
-                android:layout_height="50dp"
-                android:layout_width="wrap_content"
-                android:textSize="30dp"
-                android:text="是" />
-
-            <RadioButton
-                android:id="@+id/no_adopt_group"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:textSize="30dp"
-                android:text="否" />
-
-        </RadioGroup>
+            android:id="@+id/spinner4"
+            android:textSize="30dp" />
     </TableRow>
     <TableRow>
         <TextView
