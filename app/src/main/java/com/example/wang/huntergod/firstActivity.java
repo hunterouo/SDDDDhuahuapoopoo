@@ -15,6 +15,8 @@ public class firstActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_first);
 
+        setTitle("Catdeo");
+
 
         ImageButton imagebutton2= (ImageButton) findViewById(R.id.imageButton2);
         imagebutton2.setOnClickListener(new View.OnClickListener() {

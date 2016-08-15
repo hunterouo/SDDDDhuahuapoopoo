@@ -3,69 +3,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="60dp"
+    android:paddingLeft="60dp"
+    android:paddingRight="60dp"
+    android:paddingTop="60dp"
     tools:context="com.example.wang.huntergod.loginActivity"
     android:background="@drawable/loginpage">
 
 
-    <LinearLayout
-        android:orientation="vertical"
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="1">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        >
+        <TableRow>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:id="@+id/editText1"
+                android:ems="12"
+                android:layout_weight="1"
+                android:hint="帳號"
+                android:textSize="30dp"/>
 
+        </TableRow>
+        <TableRow>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:inputType="textPassword"
+                android:ems="12"
+                android:id="@+id/editText2"
+                android:layout_weight="1"
+                android:hint="密碼"
+                android:textSize="30dp"/>
+
+        </TableRow>
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_weight="0.30"></LinearLayout>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText1"
-            android:ems="20"
-            android:layout_weight="0.03"
-
-            android:hint="帳號" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:ems="20"
-            android:id="@+id/editText2"
-            android:layout_weight="0.03"
-            android:hint="密碼" />
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="86dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.33">
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <Button
-                android:layout_width="128dp"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:text="註冊"
+                android:id="@+id/button1"
+                android:background="#FF7744"
+                android:textColor="#ffffff"
+                android:textSize="25dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_weight="1"
                 android:text="登入"
                 android:id="@+id/button2"
-                android:background="#eb2e2e"
-                android:layout_gravity="right|top"
+                android:background="#F74141"
                 android:textColor="#ffffff"
+                android:textSize="25dp"
                 />
 
-            <Button
-                android:layout_width="128dp"
-                android:layout_height="wrap_content"
-                android:text="我要註冊"
-                android:id="@+id/button1"
-                android:layout_gravity="left|top"
-                android:background="#00ffdd" />
-
-        </FrameLayout>
-
-    </LinearLayout>
+        </LinearLayout>
+    </TableLayout>
 </RelativeLayout>

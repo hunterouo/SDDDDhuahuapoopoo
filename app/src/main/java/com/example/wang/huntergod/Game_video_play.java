@@ -1,7 +1,6 @@
 package com.example.wang.huntergod;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -43,9 +42,10 @@ public class Game_video_play extends Activity implements SurfaceHolder.Callback 
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                Intent intent = new Intent();
+                /*Intent intent = new Intent();
                 intent.setClass(Game_video_play.this, MainActivity.class);
-                startActivity(intent);
+                startActivity(intent);*/
+
                 Game_video_play.this.finish();
             }
         });

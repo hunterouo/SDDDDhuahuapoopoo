@@ -200,6 +200,8 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
+        setTitle("Catdeo");
+
         handler.removeCallbacks(updateTimer);
         handler.postDelayed(updateTimer, 60000);
         handler_poo.removeCallbacks(runnable_poo);

@@ -14,5 +14,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_fix_cat">FixCatActivity</string>
 
-
+    <string name="edit_text_hint_ID"><font size="25">帳號</font></string>
+    <string name="edit_text_hint_Password"><font size="25">密碼</font></string>
 </resources>
