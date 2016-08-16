@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView animation_iv, score_test, poo_1,poo_2,poo_3,poo_4;
     TextView score_happy;
     VideoView video007;
+    RelativeLayout relay;
     ImageButton eat_btn,bath_btn,play_btn,brush_btn,poopoo_btn;
     static int[] status=new int[5];
     static int[] poo=new int[4];
@@ -155,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             myDB.close();
-            handler.postDelayed(this, 60000);
+            handler.postDelayed(this, 600000);
 
         }
     };
@@ -203,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         setTitle("Catdeo");
 
         handler.removeCallbacks(updateTimer);
-        handler.postDelayed(updateTimer, 60000);
+        handler.postDelayed(updateTimer, 600000);
         handler_poo.removeCallbacks(runnable_poo);
         handler_poo.postDelayed(runnable_poo,30000);
         //音樂
@@ -338,6 +339,7 @@ public class MainActivity extends AppCompatActivity {
         soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 5);
         point = soundPool.load(this, R.raw.water_drop, 1);
         video007= (VideoView) findViewById(R.id.videoView007);
+        relay= (RelativeLayout) findViewById(R.id.relay_video);
 
         eat_btn.setOnClickListener(new ImageButton.OnClickListener() {
             @Override
@@ -360,10 +362,11 @@ public class MainActivity extends AppCompatActivity {
 
                     status[0]=10;
                 } else {
-                    video007.setVisibility(View.VISIBLE);
+                    relay.setVisibility(View.VISIBLE);
 
                     Random rank = new Random();
                     int num = rank.nextInt(4) + 1;
+                    video007.setVideoPath("storage/emulated/0/Movies/eat/eat" + num + ".mp4");
                     video007.setVideoPath("storage/emulated/0/Movies/eat/eat" + num + ".mp4");
                     video007.requestFocus();
                     video007.start();
@@ -378,12 +381,12 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onCompletion(MediaPlayer mp) {
                             video007.stopPlayback(); //video007.release();
-                            video007.setVisibility(View.INVISIBLE);
+                            relay.setVisibility(View.INVISIBLE);
                         }
                     });
 
 
-                    /*Intent intent=new Intent();
+                   /* Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_feed.class);
                     startActivity(intent);*/
 

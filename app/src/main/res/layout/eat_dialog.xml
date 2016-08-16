@@ -6,7 +6,7 @@
     android:paddingLeft="17dp"
     android:paddingRight="17dp"
     android:paddingTop="17dp"
-    android:background="@mipmap/tip_eat"
+    android:background="@drawable/tip_eat"
     android:orientation="vertical">
 
 

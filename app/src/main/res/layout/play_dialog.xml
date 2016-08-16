@@ -6,7 +6,7 @@
     android:paddingLeft="17dp"
     android:paddingRight="17dp"
     android:paddingTop="17dp"
-    android:background="@mipmap/tip_play"
+    android:background="@drawable/tip_play"
     android:orientation="vertical">
 
 

@@ -38,6 +38,7 @@ public class Video_ChooseActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video__choose);
 
+        setTitle("選擇影片");
 
     }
 
