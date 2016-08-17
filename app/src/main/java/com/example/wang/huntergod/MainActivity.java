@@ -15,6 +15,8 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -22,13 +24,17 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import java.util.Date;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private MediaPlayer mp;//背景音樂
+    ImageButton questionBt;
     ImageView animation_iv, score_test, poo_1,poo_2,poo_3,poo_4;
     TextView score_happy;
+    VideoView video007;
     ImageButton eat_btn,bath_btn,play_btn,brush_btn,poopoo_btn;
     static int[] status=new int[5];
     static int[] poo=new int[4];
@@ -321,11 +327,6 @@ public class MainActivity extends AppCompatActivity {
         poo_4= (ImageView) findViewById(R.id.poo4);
 
 
-
-
-
-
-
         brush_btn= (ImageButton) findViewById(R.id.brush_img_Button);
         poopoo_btn= (ImageButton) findViewById(R.id.poopoo_img_Button);
         eat_btn= (ImageButton) findViewById(R.id.eat_img_Button);
@@ -334,6 +335,7 @@ public class MainActivity extends AppCompatActivity {
 
         soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 5);
         point = soundPool.load(this, R.raw.water_drop, 1);
+        video007= (VideoView) findViewById(R.id.videoView007);
 
         eat_btn.setOnClickListener(new ImageButton.OnClickListener() {
             @Override
@@ -356,10 +358,35 @@ public class MainActivity extends AppCompatActivity {
 
                     status[0]=10;
                 } else {
+                    video007.setVisibility(View.VISIBLE);
 
-                    Intent intent=new Intent();
+                    Random rank = new Random();
+                    int num = rank.nextInt(4) + 1;
+                    video007.setVideoPath("storage/emulated/0/Movies/eat/eat" + num + ".mp4");
+                    video007.requestFocus();
+                    video007.start();
+                    video007.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                        @Override
+                        public void onPrepared(MediaPlayer mp) {
+                            mp.setVolume(0, 0);
+                        }
+                    });
+
+                    video007.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mp) {
+                            video007.stopPlayback(); //video007.release();
+                            video007.setVisibility(View.INVISIBLE);
+                        }
+                    });
+
+
+                    /*Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_feed.class);
-                    startActivity(intent);
+                    startActivity(intent);*/
+
+
+
                     status[0]++;
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
@@ -522,8 +549,71 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        questionBt= (ImageButton) findViewById(R.id.direction_imageButton);
+
+        questionBt.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final Dialog direction_dialog = new Dialog(MainActivity.this, R.style.DialogTheme);
+                direction_dialog.setContentView(R.layout.direction_dialog);
+                Button q_OK = (Button) direction_dialog.findViewById(R.id.direction_OKbutton);
+                direction_dialog.show();
+
+                q_OK.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // Close dialog
+                        direction_dialog.dismiss();
+                    }
+                });
+
+            }
+        });
 
 
+
+
+
+    }
+    @Override
+
+    public boolean onCreateOptionsMenu(Menu menu){
+
+        super.onCreateOptionsMenu(menu);
+
+        menu.add(0,0,0,"選單");
+
+        menu.add(0,1,0,"離開");
+
+        return true;
+
+    }
+    @Override
+
+    public boolean onOptionsItemSelected(MenuItem item){
+
+        super.onOptionsItemSelected(item);
+
+        switch(item.getItemId()){
+
+            case 0:
+
+                Intent intent = new Intent();
+
+                intent.setClass(MainActivity.this,GameActivity.class);
+
+                startActivity(intent);
+
+                break;
+
+            case 1:
+
+                finish();
+
+        }
+
+        return true;
 
     }
 
@@ -626,6 +716,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.cat_video);
         animation_iv.setBackgroundDrawable(ad);
         ad.start();
+
 
     }
     public void changeStatus(){

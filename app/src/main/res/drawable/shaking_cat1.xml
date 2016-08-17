@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/choose1_animation"
     android:oneshot="true">
     <item android:drawable="@drawable/box_shake01" android:duration="200" />
     <item android:drawable="@drawable/box_shake02" android:duration="200" />

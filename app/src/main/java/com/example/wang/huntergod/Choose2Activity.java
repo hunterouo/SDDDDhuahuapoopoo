@@ -8,17 +8,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
 public class Choose2Activity extends AppCompatActivity {
+    private AnimationDrawable ad;
     ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose2);
-        iv= (ImageView) findViewById(R.id.image);
+        iv= (ImageView) findViewById(R.id.image_choose2);
 
-        iv.setBackgroundResource(R.drawable.shaking_cat1);
-        AnimationDrawable ad= (AnimationDrawable) iv.getBackground();
+        iv.setImageResource(R.drawable.shaking_cat1);
+         ad= (AnimationDrawable) iv.getDrawable();
         ad.start();
+
+
+
         int duration = 0;
 
         for(int i=0;i<ad.getNumberOfFrames();i++){

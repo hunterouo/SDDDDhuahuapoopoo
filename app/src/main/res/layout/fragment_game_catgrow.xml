@@ -6,4 +6,10 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="回到遊戲"
+        android:id="@+id/button_backgame"
+        android:layout_gravity="center" />
 </FrameLayout>
