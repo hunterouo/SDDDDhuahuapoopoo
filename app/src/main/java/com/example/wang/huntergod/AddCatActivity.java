@@ -48,6 +48,8 @@ public class AddCatActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_cat);
 
+        setTitle("新增貓咪資訊");
+
         buttonChoose = (Button) findViewById(R.id.buttonLoadPicture);
         buttonUpload = (Button) findViewById(R.id.button20);
         catname=(EditText)findViewById(R.id.editText8);

@@ -1,167 +1,77 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="120dp"
+    android:paddingLeft="60dp"
+    android:paddingRight="60dp"
+    android:paddingTop="150dp"
     tools:context="com.example.wang.huntergod.editmidinforActivity"
     android:background="@drawable/bigcatbackground"
     >
 
     <!-- TODO: Update blank fragment layout -->
-    <Space
-        android:layout_width="fill_parent"
-        android:layout_height="150px"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/space1" />
-
-    <Space
-        android:layout_width="100px"
-        android:layout_height="fill_parent"
-        android:layout_below="@+id/space1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/space2" />
-
-    <Space
-        android:layout_width="100px"
-        android:layout_height="fill_parent"
-        android:layout_alignTop="@+id/space2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/space3" />
-
+    <TableRow>
     <TextView
-        android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
         android:text="中途名稱："
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:id="@+id/textView1"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toRightOf="@+id/space2"
-        android:layout_toEndOf="@+id/space2" />
+        />
 
     <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:id="@+id/textView2"
-        android:layout_below="@+id/space1"
-        android:layout_toRightOf="@+id/textView1"
-        android:layout_alignRight="@+id/textView9"
-        android:layout_alignEnd="@+id/textView9" />
-
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="20px"
-        android:layout_below="@+id/textView1"
-        android:layout_toRightOf="@+id/space2"
-        android:layout_toEndOf="@+id/space2"
-        android:id="@+id/space4" />
-
+        />
+    </TableRow>
+    <TableRow>
     <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="聯絡Email："
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:id="@+id/textView"
-        android:layout_below="@+id/space4"
-        android:layout_toRightOf="@+id/space2"
-        android:layout_toEndOf="@+id/space2" />
+        />
 
     <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:textSize="20dp"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/space4"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
-
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="20px"
-        android:layout_below="@+id/textView"
-        android:layout_toRightOf="@+id/space2"
-        android:layout_toEndOf="@+id/space2"
-        android:id="@+id/space5" />
-
+        android:textSize="30dp"
+        android:id="@+id/textView3" />
+    </TableRow>
+    <TableRow>
     <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="地址："
-        android:textSize="20dp"
-        android:id="@+id/textView6"
-        android:layout_below="@+id/space5"
-        android:layout_toRightOf="@+id/space2"
-        android:layout_toEndOf="@+id/space2" />
+        android:textSize="30dp"
+        android:id="@+id/textView6" />
 
     <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:textSize="20dp"
-        android:id="@+id/textView7"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_toRightOf="@+id/textView6"
-        android:layout_alignTop="@+id/textView6"
-        android:layout_alignRight="@+id/textView9"
-        android:layout_alignEnd="@+id/textView9" />
-
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="20px"
-        android:layout_below="@+id/textView6"
-        android:layout_toRightOf="@+id/space2"
-        android:layout_toEndOf="@+id/space2"
-        android:id="@+id/space6" />
-
+        android:textSize="30dp"
+        android:id="@+id/textView7" />
+    </TableRow>
+    <TableRow>
     <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="相關網站："
-        android:textSize="20dp"
-        android:id="@+id/textView8"
-        android:layout_below="@+id/space6"
-        android:layout_toRightOf="@+id/space2"
-        android:layout_toEndOf="@+id/space2" />
+        android:textSize="30dp"
+        android:id="@+id/textView8" />
 
     <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:textSize="20dp"
-        android:id="@+id/textView9"
-        android:layout_below="@+id/space6"
-        android:layout_toLeftOf="@+id/space3"
-        android:layout_alignBottom="@+id/textView8"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3" />
-
+        android:textSize="30dp"
+        android:id="@+id/textView9" />
+    </TableRow>
+    <TableLayout>
     <Button
-        android:layout_width="wrap_content"
+        style="@style/RDButton"
         android:layout_height="wrap_content"
         android:text="編輯"
+        android:textSize="30dp"
         android:id="@+id/button6"
-        style="@style/RDButton"
-        android:layout_below="@+id/textView9"
-        android:layout_alignRight="@+id/textView9"
-        android:layout_alignEnd="@+id/textView9" />
+        android:layout_centerHorizontal="true" />
+    </TableLayout>
 
-
-</RelativeLayout>
+</TableLayout>

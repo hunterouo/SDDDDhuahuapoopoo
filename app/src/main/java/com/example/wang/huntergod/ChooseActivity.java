@@ -30,6 +30,7 @@ public class ChooseActivity extends AppCompatActivity {
         //關閉狀態列
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        setTitle("選擇貓咪");
 
         mImageSwitcher= (ImageSwitcher) findViewById(R.id.imageSwitcher);
         mTextSwitcher= (TextSwitcher) findViewById(R.id.textSwitcher);

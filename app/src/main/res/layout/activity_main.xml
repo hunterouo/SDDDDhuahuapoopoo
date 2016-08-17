@@ -60,7 +60,7 @@ tools:context="com.example.wang.huntergod.MainActivity">
         >
 
         <ImageView
-            android:layout_width="220dp"
+            android:layout_width="320dp"
             android:layout_height="150dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -81,10 +81,10 @@ tools:context="com.example.wang.huntergod.MainActivity">
 
         <TextView
             android:layout_width="60dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="83dp"
-            android:layout_marginLeft="75dp"
-            android:textSize="80px"
+            android:layout_height="50dp"
+            android:layout_marginTop="88dp"
+            android:layout_marginLeft="120dp"
+            android:textSize="55px"
             android:text="0"
             android:id="@+id/score_textView" />
 
@@ -159,16 +159,16 @@ tools:context="com.example.wang.huntergod.MainActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#000000"
+        android:id="@+id/relay_video"
+        android:visibility="invisible"
         >
 
         <VideoView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/videoView007"
-            android:background="#000000"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:visibility="invisible"/>
+            />
     </RelativeLayout>
 
 

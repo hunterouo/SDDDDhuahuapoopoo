@@ -149,22 +149,22 @@ public class Video_ChooseActivity extends Activity {
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-            super.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
 
 
 
-                Uri selectedImageUri = data.getData();
-        //        selectedPath = getPath(selectedImageUri);
-                if(selectedImageUri!=null){
-                    VideoView iv = (VideoView)this.findViewById(R.id.videoView01);
-                    iv.setVideoURI( selectedImageUri );
-                    setTitle( selectedImageUri.toString() );
-                    selectedVideo = selectedImageUri;
-                }
-                else{
-                    setTitle("無效的檔案路徑 !!");
-                }
+            Uri selectedImageUri = data.getData();
+            //        selectedPath = getPath(selectedImageUri);
+            if(selectedImageUri!=null){
+                VideoView iv = (VideoView)this.findViewById(R.id.videoView01);
+                iv.setVideoURI( selectedImageUri );
+                setTitle( selectedImageUri.toString() );
+                selectedVideo = selectedImageUri;
+            }
+            else{
+                setTitle("無效的檔案路徑 !!");
+            }
 
         }
         else{

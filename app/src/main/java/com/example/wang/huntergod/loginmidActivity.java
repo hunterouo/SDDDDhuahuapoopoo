@@ -28,6 +28,8 @@ public class loginmidActivity extends AppCompatActivity {
         setContentView(R.layout.activity_loginmid);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        setTitle("中途登入");
+
         Button button5 = (Button) findViewById(R.id.button5);
         button5.setOnClickListener(new View.OnClickListener() {
             @Override

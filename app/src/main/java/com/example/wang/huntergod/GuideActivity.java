@@ -37,6 +37,8 @@ public class GuideActivity extends Activity implements ViewPager.OnPageChangeLis
         setContentView(R.layout.guide);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        setTitle("遊戲說明");
+
         // 初始化页面
         initViews();
 
