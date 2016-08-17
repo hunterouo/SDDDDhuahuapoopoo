@@ -19,7 +19,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.VideoView;
 
 import java.io.BufferedReader;
@@ -38,12 +37,14 @@ public class Video_ChooseActivity extends Activity {
     private Button choose;
     private Button complete;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video__choose);
         choose=(Button)findViewById(R.id.button16);
         complete=(Button)findViewById(R.id.button_video);
+
         choose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -185,7 +186,7 @@ public class Video_ChooseActivity extends Activity {
 class UploadFiles {
 
     InputStream stream = null;
-    ProgressBar progressBar;
+
     public void upload(String fileName, InputStream stream) throws IOException {
 
 
@@ -199,6 +200,7 @@ class UploadFiles {
 
 
 
+
         @Override
         protected String doInBackground(String... params) {
 
@@ -206,7 +208,7 @@ class UploadFiles {
             DataOutputStream outputStream = null;
             DataInputStream inputStream = null;
 
-            String urlServer = "http://163.13.201.93/video/upload.php";
+            String urlServer = "http://163.13.201.93/video/eat_upload.php";
             String lineEnd = "\r\n";
             String twoHyphens = "--";
             String boundary = "*****";
@@ -284,7 +286,9 @@ class UploadFiles {
 
             super.onPreExecute();
 
+
         }
+
         @Override
         protected void onPostExecute(String result) {
             Log.v("Video Upload", result);

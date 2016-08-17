@@ -27,7 +27,6 @@ import android.widget.TextView;
 import android.widget.VideoView;
 
 import java.util.Date;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private MediaPlayer mp;//背景音樂
@@ -155,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             myDB.close();
-            handler.postDelayed(this, 60000);
+            handler.postDelayed(this, 600000);
 
         }
     };
@@ -201,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         handler.removeCallbacks(updateTimer);
-        handler.postDelayed(updateTimer, 60000);
+        handler.postDelayed(updateTimer, 600000);
         handler_poo.removeCallbacks(runnable_poo);
         handler_poo.postDelayed(runnable_poo,30000);
         //音樂
@@ -358,7 +357,7 @@ public class MainActivity extends AppCompatActivity {
 
                     status[0]=10;
                 } else {
-                    video007.setVisibility(View.VISIBLE);
+                    /*video007.setVisibility(View.VISIBLE);
 
                     Random rank = new Random();
                     int num = rank.nextInt(4) + 1;
@@ -378,12 +377,12 @@ public class MainActivity extends AppCompatActivity {
                             video007.stopPlayback(); //video007.release();
                             video007.setVisibility(View.INVISIBLE);
                         }
-                    });
+                    });*/
 
 
-                    /*Intent intent=new Intent();
+                    Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_feed.class);
-                    startActivity(intent);*/
+                    startActivity(intent);
 
 
 
