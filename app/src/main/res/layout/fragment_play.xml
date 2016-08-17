@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/loginpage"
-    >
+    tools:context="com.example.wang.huntergod.PlayFragment">
 
     <Button
         android:layout_width="wrap_content"
@@ -12,5 +12,5 @@
         android:text="上傳"
         style="@style/RDButton"
         android:id="@+id/button14"
-        android:layout_gravity="right" />
-</LinearLayout>
+        android:layout_gravity="right|top" />
+</FrameLayout>
