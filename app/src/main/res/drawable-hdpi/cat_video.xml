@@ -7,8 +7,11 @@
     <item android:drawable="@drawable/cat1_4" android:duration="500" />
     <item android:drawable="@drawable/cat1_5" android:duration="500" />
     <item android:drawable="@drawable/cat1_6" android:duration="500" />
-    <item android:drawable="@drawable/cat1_7" android:duration="500" />
     <item android:drawable="@drawable/cat1_8" android:duration="500" />
+    <item android:drawable="@drawable/cat1_9" android:duration="500" />
+    <item android:drawable="@drawable/cat1_10" android:duration="500" />
+    <item android:drawable="@drawable/cat1_9" android:duration="500" />
+    <item android:drawable="@drawable/cat1_10" android:duration="500" />
     <item android:drawable="@drawable/cat1_9" android:duration="500" />
     <item android:drawable="@drawable/cat1_10" android:duration="500" />
     <item android:drawable="@drawable/cat1_11" android:duration="500" />
@@ -18,8 +21,34 @@
     <item android:drawable="@drawable/cat1_15" android:duration="500" />
     <item android:drawable="@drawable/cat1_16" android:duration="500" />
     <item android:drawable="@drawable/cat1_17" android:duration="500" />
+    <item android:drawable="@drawable/cat1_15" android:duration="500" />
+    <item android:drawable="@drawable/cat1_16" android:duration="500" />
+    <item android:drawable="@drawable/cat1_17" android:duration="500" />
+    <item android:drawable="@drawable/cat1_15" android:duration="500" />
+    <item android:drawable="@drawable/cat1_16" android:duration="500" />
+    <item android:drawable="@drawable/cat1_17" android:duration="500" />
     <item android:drawable="@drawable/cat1_18" android:duration="500" />
     <item android:drawable="@drawable/cat1_19" android:duration="500" />
+    <item android:drawable="@drawable/cat1_20" android:duration="500" />
+    <item android:drawable="@drawable/cat1_21" android:duration="500" />
+    <item android:drawable="@drawable/cat1_22" android:duration="500" />
+    <item android:drawable="@drawable/cat1_23" android:duration="500" />
+    <item android:drawable="@drawable/cat1_24" android:duration="500" />
+    <item android:drawable="@drawable/cat1_25" android:duration="500" />
+    <item android:drawable="@drawable/cat1_26" android:duration="500" />
+    <item android:drawable="@drawable/cat1_25" android:duration="500" />
+    <item android:drawable="@drawable/cat1_26" android:duration="500" />
+    <item android:drawable="@drawable/cat1_25" android:duration="500" />
+    <item android:drawable="@drawable/cat1_26" android:duration="500" />
+    <item android:drawable="@drawable/cat1_25" android:duration="500" />
+    <item android:drawable="@drawable/cat1_26" android:duration="500" />
+    <item android:drawable="@drawable/cat1_25" android:duration="500" />
+    <item android:drawable="@drawable/cat1_26" android:duration="500" />
+    <item android:drawable="@drawable/cat1_27" android:duration="500" />
+    <item android:drawable="@drawable/cat1_28" android:duration="500" />
+    <item android:drawable="@drawable/cat1_29" android:duration="500" />
+    <item android:drawable="@drawable/cat1_30" android:duration="500" />
+
 
 
 

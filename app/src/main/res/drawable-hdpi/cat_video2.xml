@@ -15,8 +15,45 @@
     <item android:drawable="@drawable/c2_12" android:duration="500" />
     <item android:drawable="@drawable/c2_13" android:duration="500" />
     <item android:drawable="@drawable/c2_14" android:duration="500" />
-
-
-
+    <item android:drawable="@drawable/c2_15" android:duration="500" />
+    <item android:drawable="@drawable/c2_16" android:duration="500" />
+    <item android:drawable="@drawable/c2_17" android:duration="500" />
+    <item android:drawable="@drawable/c2_18" android:duration="500" />
+    <item android:drawable="@drawable/c2_15" android:duration="500" />
+    <item android:drawable="@drawable/c2_16" android:duration="500" />
+    <item android:drawable="@drawable/c2_17" android:duration="500" />
+    <item android:drawable="@drawable/c2_18" android:duration="500" />
+    <item android:drawable="@drawable/c2_19" android:duration="500" />
+    <item android:drawable="@drawable/c2_20" android:duration="500" />
+    <item android:drawable="@drawable/c2_21" android:duration="500" />
+    <item android:drawable="@drawable/c2_22" android:duration="500" />
+    <item android:drawable="@drawable/c2_23" android:duration="500" />
+    <item android:drawable="@drawable/c2_24" android:duration="500" />
+    <item android:drawable="@drawable/c2_25" android:duration="500" />
+    <item android:drawable="@drawable/c2_26" android:duration="500" />
+    <item android:drawable="@drawable/c2_27" android:duration="500" />
+    <item android:drawable="@drawable/c2_28" android:duration="500" />
+    <item android:drawable="@drawable/c2_29" android:duration="500" />
+    <item android:drawable="@drawable/c2_30" android:duration="500" />
+    <item android:drawable="@drawable/c2_31" android:duration="500" />
+    <item android:drawable="@drawable/c2_32" android:duration="500" />
+    <item android:drawable="@drawable/c2_33" android:duration="500" />
+    <item android:drawable="@drawable/c2_34" android:duration="500" />
+    <item android:drawable="@drawable/c2_35" android:duration="500" />
+    <item android:drawable="@drawable/c2_31" android:duration="500" />
+    <item android:drawable="@drawable/c2_32" android:duration="500" />
+    <item android:drawable="@drawable/c2_33" android:duration="500" />
+    <item android:drawable="@drawable/c2_34" android:duration="500" />
+    <item android:drawable="@drawable/c2_35" android:duration="500" />
+    <item android:drawable="@drawable/c2_36" android:duration="500" />
+    <item android:drawable="@drawable/c2_37" android:duration="500" />
+    <item android:drawable="@drawable/c2_38" android:duration="500" />
+    <item android:drawable="@drawable/c2_39" android:duration="500" />
+    <item android:drawable="@drawable/c2_40" android:duration="500" />
+    <item android:drawable="@drawable/c2_41" android:duration="500" />
+    <item android:drawable="@drawable/c2_41" android:duration="500" />
+    <item android:drawable="@drawable/c2_41" android:duration="500" />
+    <item android:drawable="@drawable/c2_41" android:duration="500" />
+    <item android:drawable="@drawable/c2_41" android:duration="500" />
 
 </animation-list>

@@ -11,12 +11,15 @@ import android.widget.ImageView;
 public class Choose2Activity extends AppCompatActivity {
     private AnimationDrawable ad;
     ImageView iv;
+    static StatusDB myDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose2);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //myDB = new StatusDB(this, "MyDB", null, 1);
+
         iv= (ImageView) findViewById(R.id.image_choose2);
 
         iv.setImageResource(R.drawable.shaking_cat1);
@@ -36,12 +39,14 @@ public class Choose2Activity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
 
         public void run() {
+
              Intent intent = new Intent(Choose2Activity.this,MainActivity.class);
-             startActivity(intent);
+            startActivity(intent);
 
              }
 
              }, duration);
     }
+
 }
 

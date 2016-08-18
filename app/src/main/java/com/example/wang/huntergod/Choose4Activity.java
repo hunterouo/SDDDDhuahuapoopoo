@@ -11,14 +11,19 @@ import android.widget.ImageView;
 public class Choose4Activity extends AppCompatActivity {
     ImageView iv;
     private AnimationDrawable ad;
+    static StatusDB myDB;
+    static int[] status=new int[6];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose4);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        iv= (ImageView) findViewById(R.id.image_choose4);
 
+        //myDB = new StatusDB(this, "MyDB", null, 1);
+
+
+        iv= (ImageView) findViewById(R.id.image_choose4);
         iv.setImageResource(R.drawable.shaking_cat3);
          ad= (AnimationDrawable) iv.getDrawable();
         ad.start();
@@ -44,5 +49,6 @@ public class Choose4Activity extends AppCompatActivity {
 
         }, duration);
     }
+
 }
 

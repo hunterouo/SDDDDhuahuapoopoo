@@ -12,18 +12,21 @@
     >
 
     <TableRow>
-        <TextView
+
+        <EditText
             android:layout_height="wrap_content"
-            android:text="得到日期："
             android:textSize="30dp"
-            android:id="@+id/textView34"/>
+            android:layout_weight="1"
+            android:id="@+id/tvDate"/>
         <Button
-            android:id="@+id/chooseTime_Button"
+
             android:layout_height="wrap_content"
-            android:text="選擇時間"
+            android:text="選擇得到日期"
             android:textSize="30dp"
+            android:layout_weight="0.5"
+            android:id="@+id/btDate"
             style="@style/RDButton"
-            android:onClick="showDatePickerDialog"/>
+            />
 
     </TableRow>
     <TableRow>
@@ -42,12 +45,14 @@
         <TextView
             android:layout_height="wrap_content"
             android:text="上傳照片："
+            android:layout_weight="1"
             android:textSize="30dp" />
         <Button
             android:layout_height="wrap_content"
             android:text="選擇"
             style="@style/RDButton"
             android:textSize="30dp"
+            android:layout_weight="0.5"
             android:id="@+id/button21"
             android:onClick="loadImagefromGallery"/>
     </TableRow>
