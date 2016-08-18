@@ -3,9 +3,10 @@
     package="com.example.wang.huntergod">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -50,7 +51,18 @@
         <activity android:name=".Game_video_cleanpoo" />
         <activity android:name=".Game_video_brush" />
         <activity android:name=".Game_video_feed" />
-        <activity android:name=".Game_video_shower"></activity>
+        <activity android:name=".Game_video_shower" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".CustomProgressDialog" />
+        <activity android:name=".ActivityVideoPlay" />
+        <activity android:name=".ActivityVideoShower" />
     </application>
 
 </manifest>

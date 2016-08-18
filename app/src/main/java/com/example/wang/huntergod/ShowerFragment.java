@@ -30,7 +30,7 @@ public class ShowerFragment extends Fragment {
         button20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(),Video_ChooseActivity.class);
+                Intent intent=new Intent(getActivity(),ActivityVideoShower.class);
 
                 startActivity(intent);
             }

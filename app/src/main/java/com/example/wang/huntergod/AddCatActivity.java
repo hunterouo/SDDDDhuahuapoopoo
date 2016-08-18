@@ -143,7 +143,6 @@ public class AddCatActivity extends AppCompatActivity implements View.OnClickLis
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                loading.dismiss();
                 Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
             }
 
