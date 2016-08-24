@@ -1,24 +1,31 @@
 package com.example.wang.huntergod;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class AddvideoGetActivity extends AppCompatActivity {
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
+    private TextView tvDate;
+    private Button btDate;
+    private int mYear, mMonth, mDay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,18 +34,20 @@ public class AddvideoGetActivity extends AppCompatActivity {
         setTitle("新增收穫");
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        tvDate = (TextView) findViewById(R.id.tvDate);
+
+
+        btDate = (Button) findViewById(R.id.btDate);
+
+
+        btDate.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                showDatePickerDialog();
+            }
+        });
     }
-    //選擇日期
-    public void showDatePickerDialog(View v)
-    {
-        DialogFragment newFragment = new DatePickerFragment();
-        Bundle bData = new Bundle();
-        bData.putInt("view", v.getId());
-        Button button = (Button) v;
-        bData.putString("date", button.getText().toString());
-        newFragment.setArguments(bData);
-        newFragment.show(getSupportFragmentManager(), "日期挑選器");
-    }
+
 
     public void loadImagefromGallery(View view) {
         // Create intent to Open Image applications like Gallery, Google Photos
@@ -106,5 +115,26 @@ public class AddvideoGetActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showDatePickerDialog() {
+        // 設定初始日期
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+        // 跳出日期選擇器
+        DatePickerDialog dpd = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+                        // 完成選擇，顯示日期
+                        tvDate.setText(year + "-" + (monthOfYear + 1) + "-"
+                                + dayOfMonth);
+
+                    }
+                }, mYear, mMonth, mDay);
+        dpd.show();
     }
 }

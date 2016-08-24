@@ -23,7 +23,7 @@ public class StatusDB extends SQLiteOpenHelper {
                 + "BATH INTEGER,"   //1
                 + "PLAY INTEGER,"   //2
                 + "HAPPY INTEGER,"  //3
-                + "SHELTER INTEGER"+");";//4
+                + "SHELTER INTEGER"+");";//5
 
         db.execSQL(create);
     }
@@ -46,10 +46,13 @@ public class StatusDB extends SQLiteOpenHelper {
         cv.put("HAPPY", status[3]);
 
 
+
         db.update("DBtable", cv, "_id=" + cursor.getInt(1), null);
         db.update("DBtable", cv, "_id=" + cursor.getInt(2), null);
         db.update("DBtable", cv, "_id=" + cursor.getInt(3), null);
         db.update("DBtable", cv, "_id=" + cursor.getInt(4), null);
+
+
 
 
 
