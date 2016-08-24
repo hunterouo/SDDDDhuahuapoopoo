@@ -8,12 +8,13 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,20 +31,17 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class ActivityVideoShower extends Activity {
-
+public class ActivityVideoCleanpoo extends AppCompatActivity {
     private static final int SELECT_AUDIO = 2;
     private Uri selectedVideo;
     private Button choose;
     private Button complete;
-
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_video_shower);
-        choose=(Button)findViewById(R.id.buttonE);
-        complete=(Button)findViewById(R.id.buttonF);
+        setContentView(R.layout.activity_activity_video_cleanpoo);
+        choose=(Button)findViewById(R.id.buttonI);
+        complete=(Button)findViewById(R.id.buttonJ);
 
         choose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +75,7 @@ public class ActivityVideoShower extends Activity {
 
     public void UploadVideo(ContentResolver resolver) {
 
-        UploadShower i=new UploadShower();
+        UploadCleanpoo i=new UploadCleanpoo();
         try {
             InputStream stream = resolver.openInputStream(selectedVideo);
             Cursor cursor = resolver.query(selectedVideo, null, null, null, null);
@@ -157,7 +155,7 @@ public class ActivityVideoShower extends Activity {
             Uri selectedImageUri = data.getData();
             //        selectedPath = getPath(selectedImageUri);
             if(selectedImageUri!=null){
-                VideoView iv = (VideoView)this.findViewById(R.id.videoView03);
+                VideoView iv = (VideoView)this.findViewById(R.id.videoView05);
                 iv.setVideoURI( selectedImageUri );
                 setTitle( selectedImageUri.toString() );
                 selectedVideo = selectedImageUri;
@@ -183,7 +181,7 @@ public class ActivityVideoShower extends Activity {
 
 
 }
-class UploadShower {
+class UploadCleanpoo {
 
     InputStream stream = null;
 
@@ -208,7 +206,7 @@ class UploadShower {
             DataOutputStream outputStream = null;
             DataInputStream inputStream = null;
 
-            String urlServer = "http://163.13.201.93/video/shower_upload.php";
+            String urlServer = "http://163.13.201.93/video/cleanpoo_upload.php";
             String lineEnd = "\r\n";
             String twoHyphens = "--";
             String boundary = "*****";
@@ -296,4 +294,3 @@ class UploadShower {
         }
     }
 }
-

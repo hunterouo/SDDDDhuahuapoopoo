@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -21,16 +22,23 @@ public class catinforFragment2 extends ListFragment {
     public catinforFragment2() {
         // Required empty public constructor
     }
+
+    private TextView text;
+    private TextView text1;
+    private TextView text2;
+
+
+
     String[] name ={
 
     };
-    int[] cat = {
+    int[] cat = {R.drawable.blackcat03
 
     };
-    String[] sex ={
+    String[] sex ={"母"
 
     };
-    String[] adopt ={
+    String[] adopt ={"以領養"
 
     };
     ArrayList<HashMap<String,String>> data=new ArrayList<HashMap<String, String>>();
@@ -53,8 +61,24 @@ public class catinforFragment2 extends ListFragment {
         int[] to = {R.id.cat, R.id.name,R.id.sex,R.id.adopt};
         adapter = new SimpleAdapter(getActivity(),data,R.layout.catinfor_view_content,from , to);
         setListAdapter(adapter);
+        View view = inflater.inflate(R.layout.fragment_infor, container, false);
+        text = (TextView)view.findViewById(R.id.textView2);
+        text1 = (TextView)view.findViewById(R.id.textView3);
+        text2 = (TextView)view.findViewById(R.id.textView7);
+
 
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+    public void setTextView( Bundle savedInstanceState)
+    {
+        String catname = savedInstanceState.getString("catname");
+        String catsex = savedInstanceState.getString("catsex");
+        String catadopt = savedInstanceState.getString("catadopt");
+
+        text.setText( catname );
+        text1.setText( catsex );
+        text2.setText( catadopt );
+
     }
 
     @Override

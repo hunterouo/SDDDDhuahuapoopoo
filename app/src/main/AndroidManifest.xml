@@ -63,6 +63,8 @@
         <activity android:name=".CustomProgressDialog" />
         <activity android:name=".ActivityVideoPlay" />
         <activity android:name=".ActivityVideoShower" />
+        <activity android:name=".ActivityVideoBrush" />
+        <activity android:name=".ActivityVideoCleanpoo"></activity>
     </application>
 
 </manifest>

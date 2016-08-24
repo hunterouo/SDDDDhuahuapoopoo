@@ -9,8 +9,7 @@
     android:paddingRight="60dp"
     android:paddingTop="100dp"
     android:background="@drawable/loginpage"
-    tools:context="com.example.wang.huntergod.Video_ChooseActivity">
-
+    tools:context="com.example.wang.huntergod.ActivityVideoCleanpoo">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -24,7 +23,7 @@
             android:text="選擇影片"
             style="@style/RDButton"
             android:textSize="25dp"
-            android:id="@+id/button16"
+            android:id="@+id/buttonI"
             android:layout_gravity="right|center_vertical" />
 
         <Space
@@ -37,18 +36,17 @@
             android:text="完成"
             android:textSize="25dp"
             style="@style/RDButton"
-            android:id="@+id/button_video"
+            android:id="@+id/buttonJ"
             />
     </LinearLayout>
 
-        <VideoView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/videoView01"
-            android:layout_below="@id/line_layout001"
-            android:layout_gravity="center_horizontal" />
+    <VideoView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/videoView05"
+        android:layout_below="@id/line_layout001"
+        android:layout_gravity="center_horizontal" />
 
 
 
 </RelativeLayout>
-
