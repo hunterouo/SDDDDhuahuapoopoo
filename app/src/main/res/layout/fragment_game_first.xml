@@ -1,9 +1,20 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.wang.huntergod.Game_firstFragment">
+    tools:context="com.example.wang.huntergod.Game_firstFragment"
+    android:background="@drawable/backtogame"
+    >
 
     <!-- TODO: Update blank fragment layout -->
 
-</FrameLayout>
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="回到遊戲"
+        android:id="@+id/buttonbackgame"
+        style="@style/RDButton"
+        android:layout_marginBottom="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

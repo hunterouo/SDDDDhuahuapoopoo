@@ -63,6 +63,7 @@
         <activity android:name=".CustomProgressDialog" />
         <activity android:name=".ActivityVideoPlay" />
         <activity android:name=".ActivityVideoShower" />
+        <activity android:name=".Game_video_favorite_Activity"></activity>
     </application>
 
 </manifest>

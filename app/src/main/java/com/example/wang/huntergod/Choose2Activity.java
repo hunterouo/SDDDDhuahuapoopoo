@@ -1,6 +1,8 @@
 package com.example.wang.huntergod;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +13,7 @@ import android.widget.ImageView;
 public class Choose2Activity extends AppCompatActivity {
     private AnimationDrawable ad;
     ImageView iv;
+    static StatusDB myDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +21,16 @@ public class Choose2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_choose2);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         iv= (ImageView) findViewById(R.id.image_choose2);
+
+        myDB = new StatusDB(this, "MyDB", null, 1);
+
+        changeStatus();
+        SQLiteDatabase db = myDB.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("CHOOSE", MainActivity.status[4]);
+        db.update("DBtable", values, null, null);
+        myDB.close();
+
 
         iv.setImageResource(R.drawable.shaking_cat1);
          ad= (AnimationDrawable) iv.getDrawable();
@@ -43,5 +56,10 @@ public class Choose2Activity extends AppCompatActivity {
 
              }, duration);
     }
+
+    public void  changeStatus(){
+        MainActivity.status[4]+=1;
+    }
+
 }
 

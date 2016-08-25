@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout relay;
     ImageButton eat_btn,bath_btn,play_btn,brush_btn,poopoo_btn;
     static int[] status=new int[5];
-    static int[] poo=new int[4];
     static StatusDB myDB;
     private int point;//按鈕聲
     private SoundPool soundPool;
@@ -48,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
     Runnable runnableback;*/
     Date mDate = new Date();
     int mhour;
-
-
+    //private SumTime sumTime;
+    //private MyHandler myHandler=new MyHandler();
     static int test_statusimg[]={R.mipmap.game_score,R.mipmap.game_score1, R.mipmap.game_score2, R.mipmap.game_score3, R.mipmap.game_score4, R.mipmap.game_score5, R.mipmap.game_score6, R.mipmap.game_score7, R.mipmap.game_score8, R.mipmap.game_score9, R.mipmap.game_score10};
     //static int shelter_statusimg[]={R.mipmap.game_total,R.mipmap.game_total1000, R.mipmap.game_total2000, R.mipmap.game_total3000};
 
@@ -63,97 +62,8 @@ public class MainActivity extends AppCompatActivity {
             values.put("BATH", status[1]);
             values.put("PLAY", status[2]);
             values.put("HAPPY", status[3]);
-            values.put("SHELTER", status[4]);
             db.update("DBtable", values, null, null);
 
-            switch(status[0]){
-                /*
-                case 0:
-                    score_test= (ImageView) findViewById(R.id.test_imageView);
-                    score_test.setImageResource(test_statusimg[0]);
-                    score_test.setVisibility(View.VISIBLE);
-                    break;
-                case 1:
-                    score_test= (ImageView) findViewById(R.id.test_imageView);
-                    score_test.setImageResource(test_statusimg[1]);
-                    score_test.setVisibility(View.VISIBLE);
-                    break;
-                case 2:
-                    score_test= (ImageView) findViewById(R.id.test_imageView);
-                    score_test.setImageResource(test_statusimg[2]);
-                    score_test.setVisibility(View.VISIBLE);
-                    break;
-                case 3:
-                    score_test= (ImageView) findViewById(R.id.test_imageView);
-                    score_test.setImageResource(test_statusimg[3]);
-                    score_test.setVisibility(View.VISIBLE);
-                    break;
-                case 4:
-                    score_test= (ImageView) findViewById(R.id.test_imageView);
-                    score_test.setImageResource(test_statusimg[4]);
-                    score_test.setVisibility(View.VISIBLE);
-                    break;
-                case 5:
-                    score_test= (ImageView) findViewById(R.id.test_imageView);
-                    score_test.setImageResource(test_statusimg[5]);
-                    score_test.setVisibility(View.VISIBLE);
-                    break;
-                case 6:
-                    score_test= (ImageView) findViewById(R.id.test_imageView);
-                    score_test.setImageResource(test_statusimg[6]);
-                    score_test.setVisibility(View.VISIBLE);
-                    break;
-                case 7:
-                    score_test= (ImageView) findViewById(R.id.test_imageView);
-                    score_test.setImageResource(test_statusimg[7]);
-                    score_test.setVisibility(View.VISIBLE);
-                    break;
-                case 8:
-                    score_test= (ImageView) findViewById(R.id.test_imageView);
-                    score_test.setImageResource(test_statusimg[8]);
-                    score_test.setVisibility(View.VISIBLE);
-                    break;
-                case 9:
-                    score_test= (ImageView) findViewById(R.id.test_imageView);
-                    score_test.setImageResource(test_statusimg[9]);
-                    score_test.setVisibility(View.VISIBLE);
-                    break;
-                case 10:
-                    score_test= (ImageView) findViewById(R.id.test_imageView);
-                    score_test.setImageResource(test_statusimg[10]);
-                    score_test.setVisibility(View.VISIBLE);
-                    break;*/
-
-            }
-
-            switch(status[1]){
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-
-            }
-            switch(status[2]){
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-
-            }
 
             myDB.close();
             handler.postDelayed(this, 600000);
@@ -203,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("Catdeo");
 
+
         handler.removeCallbacks(updateTimer);
         handler.postDelayed(updateTimer, 600000);
         handler_poo.removeCallbacks(runnable_poo);
@@ -213,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         mp.start();
         //貓咪動畫
         startAnimation();
+
 
         myDB = new StatusDB(this, "MyDB", null, 1);
 
@@ -227,6 +139,9 @@ public class MainActivity extends AppCompatActivity {
             if(!myCursor.moveToFirst()) {
                 myDB.initials();
             }
+           // sumTime=new SumTime();  設置5天結束遊戲 跑不動
+
+           // sumTime.start();
 
         }
         else {
@@ -235,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 status[1] = myCursor.getInt(2);
                 status[2] = myCursor.getInt(3);
                 status[3] = myCursor.getInt(4);
+                status[4] = myCursor.getInt(5);
             }
         }
 
@@ -396,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
                 }
-                uadateData();
+
 
             }
         });
@@ -428,7 +344,7 @@ public class MainActivity extends AppCompatActivity {
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
                 }
-                uadateData();
+
 
             }
         });
@@ -460,7 +376,7 @@ public class MainActivity extends AppCompatActivity {
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
                 }
-                uadateData();
+
             }
         });
 
@@ -518,7 +434,7 @@ public class MainActivity extends AppCompatActivity {
                     score_happy.setText(String.valueOf(status[3]));
 
                 }
-                uadateData();
+
             }
         });
         brush_btn.setOnClickListener(new ImageButton.OnClickListener() {
@@ -579,8 +495,50 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
     }
+    /*class MyHandler extends Handler{  設置5天結束遊戲  跑不動
+
+
+        @Override
+
+        public void handleMessage(Message msg) {
+
+            super.handleMessage(msg);
+
+            switch(msg.what) {
+
+                case 0:
+
+                    sumTime.interrupt();
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this , End_Victory.class);
+                    startActivity(intent);
+
+                    break;
+            }
+        }
+    }
+    class SumTime extends Thread {
+
+        @Override
+        public void  run(){
+            super.run();
+            try{
+                //sleep(432000000);
+                sleep(60000);
+            } catch(InterruptedException e){
+                e.printStackTrace();
+            }
+            Message message=Message.obtain();
+
+            message.what=0;
+
+            myHandler.sendMessage(message);
+
+        }
+    }*/
+
     @Override
 
     public boolean onCreateOptionsMenu(Menu menu){
@@ -589,7 +547,9 @@ public class MainActivity extends AppCompatActivity {
 
         menu.add(0,0,0,"選單");
 
-        menu.add(0,1,0,"離開");
+        menu.add(0,2,0,"影片收藏");
+
+        menu.add(0,1,1,"離開");
 
         return true;
 
@@ -616,6 +576,13 @@ public class MainActivity extends AppCompatActivity {
 
                 finish();
 
+            case 2:
+
+                Intent intent_video = new Intent();
+
+                intent_video.setClass(MainActivity.this,Game_video_favorite_Activity.class);
+
+                startActivity(intent_video);
         }
 
         return true;
@@ -623,107 +590,42 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    void uadateData(){
-        switch(status[0]){
-            /*case 0:
-                score_test= (ImageView) findViewById(R.id.test_imageView);
-                score_test.setImageResource(test_statusimg[0]);
-                score_test.setVisibility(View.VISIBLE);
-                break;
-            case 1:
-                score_test= (ImageView) findViewById(R.id.test_imageView);
-                score_test.setImageResource(test_statusimg[1]);
-                score_test.setVisibility(View.VISIBLE);
-                break;
-            case 2:
-                score_test= (ImageView) findViewById(R.id.test_imageView);
-                score_test.setImageResource(test_statusimg[2]);
-                score_test.setVisibility(View.VISIBLE);
-                break;
-            case 3:
-                score_test= (ImageView) findViewById(R.id.test_imageView);
-                score_test.setImageResource(test_statusimg[3]);
-                score_test.setVisibility(View.VISIBLE);
-                break;
-            case 4:
-                score_test= (ImageView) findViewById(R.id.test_imageView);
-                score_test.setImageResource(test_statusimg[4]);
-                score_test.setVisibility(View.VISIBLE);
-                break;
-            case 5:
-                score_test= (ImageView) findViewById(R.id.test_imageView);
-                score_test.setImageResource(test_statusimg[5]);
-                score_test.setVisibility(View.VISIBLE);
-                break;
-            case 6:
-                score_test= (ImageView) findViewById(R.id.test_imageView);
-                score_test.setImageResource(test_statusimg[6]);
-                score_test.setVisibility(View.VISIBLE);
-                break;
-            case 7:
-                score_test= (ImageView) findViewById(R.id.test_imageView);
-                score_test.setImageResource(test_statusimg[7]);
-                score_test.setVisibility(View.VISIBLE);
-                break;
-            case 8:
-                score_test= (ImageView) findViewById(R.id.test_imageView);
-                score_test.setImageResource(test_statusimg[8]);
-                score_test.setVisibility(View.VISIBLE);
-                break;
-            case 9:
-                score_test= (ImageView) findViewById(R.id.test_imageView);
-                score_test.setImageResource(test_statusimg[9]);
-                score_test.setVisibility(View.VISIBLE);
-                break;
-            case 10:
-                score_test= (ImageView) findViewById(R.id.test_imageView);
-                score_test.setImageResource(test_statusimg[10]);
-                score_test.setVisibility(View.VISIBLE);
-                break;
-                */
-
-        }
-        switch(status[1]){
+    private void startAnimation(){
+        switch(status[4]){
             case 0:
+
             case 1:
+
+                animation_iv= (ImageView) findViewById(R.id.cat_animation_view);
+                AnimationDrawable ad1 = (AnimationDrawable) getResources().getDrawable(
+                        R.drawable.cat_video);
+                animation_iv.setBackgroundDrawable(ad1);
+                ad1.start();
+                break;
             case 2:
+
+                animation_iv= (ImageView) findViewById(R.id.cat_animation_view);
+                AnimationDrawable ad2 = (AnimationDrawable) getResources().getDrawable(
+                        R.drawable.cat_video2);
+                animation_iv.setBackgroundDrawable(ad2);
+                ad2.start();
+                break;
             case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
+
+                animation_iv= (ImageView) findViewById(R.id.cat_animation_view);
+                AnimationDrawable ad3 = (AnimationDrawable) getResources().getDrawable(
+                        R.drawable.cat_video3);
+                animation_iv.setBackgroundDrawable(ad3);
+                ad3.start();
+                break;
+
+
 
         }
-        switch(status[2]){
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
 
-        }
 
     }
 
-    private void startAnimation() {
-        animation_iv= (ImageView) findViewById(R.id.cat_animation_view);
-
-        AnimationDrawable ad = (AnimationDrawable) getResources().getDrawable(
-                R.drawable.cat_video);
-        animation_iv.setBackgroundDrawable(ad);
-        ad.start();
-
-
-    }
     public void changeStatus(){
         if(status[0]>0) {
             status[0]--;

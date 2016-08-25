@@ -12,23 +12,25 @@
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="108dp"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="25dp"
             android:id="@+id/name"></TextView>
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="TextView"
+            android:textSize="25dp"
             android:id="@+id/sex"></TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="25dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Small Text"
             android:id="@+id/adopt" />
     </LinearLayout>
 </LinearLayout>

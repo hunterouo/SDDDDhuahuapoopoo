@@ -136,7 +136,7 @@ public class GameActivity extends AppCompatActivity
         }
         else if(id == R.id.logout){
             Intent intent = new Intent();
-            intent.setClass(this , loginActivity.class);
+            intent.setClass(this , firstActivity.class);
             startActivity(intent);
         }
 

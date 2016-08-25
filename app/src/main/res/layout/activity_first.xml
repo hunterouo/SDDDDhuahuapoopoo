@@ -8,7 +8,7 @@
     android:paddingRight="60dp"
     android:paddingTop="60dp"
     tools:context="com.example.wang.huntergod.firstActivity"
-    android:background="@drawable/bigcatbackground"
+    android:background="@drawable/login3"
     >
 
 
@@ -19,7 +19,7 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingTop="20dp"
-        android:layout_marginTop="134dp"
+        android:layout_marginTop="145dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -29,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_weight="1"
+            android:layout_marginRight="20dp"
             android:id="@+id/imageButton1"
             android:scaleType="centerInside"
             android:background="@drawable/choose_but1"
@@ -38,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_weight="1"
+            android:layout_marginLeft="20dp"
             android:id="@+id/imageButton2"
             android:scaleType="centerInside"
             android:background="@drawable/choose_but2"
