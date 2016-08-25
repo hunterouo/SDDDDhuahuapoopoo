@@ -38,7 +38,7 @@ public class GameActivity extends AppCompatActivity
         fragmentTransaction.commit();
 
 
-
+        setTitle("貓咪養成");
         toolbar = (Toolbar) findViewById(R.id.toolbargame);
         toolbar.setTitle("貓咪養成");
 
@@ -95,7 +95,7 @@ public class GameActivity extends AppCompatActivity
             fragmentTransaction.commit();
             Toolbar toolbar = null;
             toolbar = (Toolbar) findViewById(R.id.toolbargame);
-            toolbar.setTitle("貓咪資訊");
+            toolbar.setTitle("貓咪領養");
 
 
         } else if (id == R.id.collect) {
@@ -131,7 +131,7 @@ public class GameActivity extends AppCompatActivity
             fragmentTransaction.commit();
             Toolbar toolbar = null;
             toolbar = (Toolbar) findViewById(R.id.toolbargame);
-            toolbar.setTitle("收穫分享");
+            toolbar.setTitle("達成成就");
 
         }
         else if(id == R.id.logout){

@@ -26,7 +26,7 @@ public class Game_catgrowFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_game_catgrow, container, false);
         // Inflate the layout for this fragment
-        Button button = (Button)view.findViewById(R.id.button_backgame);
+        Button button = (Button)view.findViewById(R.id.buttonbackgame1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
