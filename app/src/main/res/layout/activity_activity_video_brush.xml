@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="100dp"
+    android:paddingLeft="60dp"
+    android:paddingRight="60dp"
+    android:paddingTop="100dp"
+    android:background="@drawable/loginpage"
+    tools:context="com.example.wang.huntergod.ActivityVideoBrush">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/line_layout001">
+
+        <Button
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:text="選擇影片"
+            style="@style/RDButton"
+            android:textSize="25dp"
+            android:id="@+id/buttonG"
+            android:layout_gravity="right|center_vertical" />
+
+        <Space
+            android:layout_width="300dp"
+            android:layout_height="20px" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="完成"
+            android:textSize="25dp"
+            style="@style/RDButton"
+            android:id="@+id/buttonH"
+            />
+    </LinearLayout>
+
+    <VideoView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/videoView04"
+        android:layout_below="@id/line_layout001"
+        android:layout_gravity="center_horizontal" />
+
+
+
+</RelativeLayout>

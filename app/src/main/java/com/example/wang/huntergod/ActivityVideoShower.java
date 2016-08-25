@@ -41,9 +41,9 @@ public class ActivityVideoShower extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video__choose);
-        choose=(Button)findViewById(R.id.button16);
-        complete=(Button)findViewById(R.id.button_video);
+        setContentView(R.layout.activity_activity_video_shower);
+        choose=(Button)findViewById(R.id.buttonE);
+        complete=(Button)findViewById(R.id.buttonF);
 
         choose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,7 +157,7 @@ public class ActivityVideoShower extends Activity {
             Uri selectedImageUri = data.getData();
             //        selectedPath = getPath(selectedImageUri);
             if(selectedImageUri!=null){
-                VideoView iv = (VideoView)this.findViewById(R.id.videoView01);
+                VideoView iv = (VideoView)this.findViewById(R.id.videoView03);
                 iv.setVideoURI( selectedImageUri );
                 setTitle( selectedImageUri.toString() );
                 selectedVideo = selectedImageUri;

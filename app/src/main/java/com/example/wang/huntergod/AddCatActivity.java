@@ -192,11 +192,11 @@ public class AddCatActivity extends AppCompatActivity implements View.OnClickLis
         }
         if(v == buttonUpload){
             uploadImage(p);
-            Intent resultData = new Intent();
+          Intent resultData = new Intent();
             resultData.putExtra("catname", catname.getText().toString());
             resultData.putExtra("catgender", catsex.getText().toString());
             resultData.putExtra("catadopt", catadopt.getSelectedItem().toString());
-
+            resultData.putExtra("image", bitmap);
             setResult(1001, resultData);
             AddCatActivity.this.finish();
 
