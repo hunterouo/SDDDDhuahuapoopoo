@@ -190,7 +190,7 @@ public class AddvideoGetActivity extends AppCompatActivity implements View.OnCli
             uploadImage(p);
             Intent resultData = new Intent();
             resultData.putExtra("date", date.getText().toString());
-            resultData.putExtra("share", share.getText().toString());
+            resultData.putExtra("share1", share.getText().toString());
             resultData.putExtra("image", filePath.toString());
             setResult(1003, resultData);
             AddvideoGetActivity.this.finish();

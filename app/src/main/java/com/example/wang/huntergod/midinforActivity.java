@@ -91,7 +91,7 @@ public class midinforActivity extends AppCompatActivity
         } else if ( resultCode == 1003 ) {
             Bundle data = new Bundle();//Use bundle to pass data
             data.putString("date",  resultData.getStringExtra("date"));
-            data.putString("share",  resultData.getStringExtra("share"));
+            data.putString("share1",  resultData.getStringExtra("share1"));
             data.putString("image",  resultData.getStringExtra("image"));
             ((videogetFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_container)).setTextView(data);
         }
