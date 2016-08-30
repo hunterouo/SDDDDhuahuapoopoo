@@ -1,32 +1,42 @@
 package com.example.wang.huntergod;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.BitmapFactory;
+import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.Calendar;
+import java.util.HashMap;
 
-public class AddvideoGetActivity extends AppCompatActivity {
+public class AddvideoGetActivity extends AppCompatActivity implements View.OnClickListener {
+    public static final String UPLOAD_URL = "http://163.13.201.93/share/share.php";
+    public static final String UPLOAD_KEY = "image";
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
-    private TextView tvDate;
-    private Button btDate;
+    private EditText date;
+    private EditText share;
+    private Button btDate,upload,chose;
     private int mYear, mMonth, mDay;
-
+    private ImageView imageView1;
+    private Bitmap bitmap;
+    private Uri filePath;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,65 +44,28 @@ public class AddvideoGetActivity extends AppCompatActivity {
         setTitle("新增收穫");
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        tvDate = (TextView) findViewById(R.id.tvDate);
-
-
+        share=(EditText)findViewById(R.id.editText20) ;
+        date = (EditText) findViewById(R.id.tvDate);
         btDate = (Button) findViewById(R.id.btDate);
-
-
+        upload=(Button)findViewById(R.id.buttonBB);
+        chose=(Button)findViewById(R.id.buttonAA);
+        imageView1 = (ImageView) findViewById(R.id.imgView2);
         btDate.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 showDatePickerDialog();
             }
         });
+        chose.setOnClickListener(this);
+        upload.setOnClickListener(this);
     }
 
-
-    public void loadImagefromGallery(View view) {
-        // Create intent to Open Image applications like Gallery, Google Photos
-        Intent galleryIntent = new Intent(Intent.ACTION_PICK,
-                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        // Start the Intent
-        startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
+    private void showFileChooser() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), RESULT_LOAD_IMG);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        try {
-            // When an Image is picked
-            if (requestCode == RESULT_LOAD_IMG && resultCode == RESULT_OK
-                    && null != data) {
-                // Get the Image from data
-
-                Uri selectedImage = data.getData();
-                String[] filePathColumn = { MediaStore.Images.Media.DATA };
-
-                // Get the cursor
-                Cursor cursor = getContentResolver().query(selectedImage,
-                        filePathColumn, null, null, null);
-                // Move to first row
-                cursor.moveToFirst();
-
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                imgDecodableString = cursor.getString(columnIndex);
-                cursor.close();
-                ImageView imgView2 = (ImageView) findViewById(R.id.imgView2);
-                // Set the Image in ImageView after decoding the String
-                imgView2.setImageBitmap(BitmapFactory
-                        .decodeFile(imgDecodableString));
-
-            } else {
-                Toast.makeText(this, "You haven't picked Image",
-                        Toast.LENGTH_LONG).show();
-            }
-        } catch (Exception e) {
-            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG)
-                    .show();
-        }
-
-    }
 
 
     @Override
@@ -117,6 +90,76 @@ public class AddvideoGetActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RESULT_LOAD_IMG && resultCode == RESULT_OK && data != null && data.getData() != null) {
+
+            filePath = data.getData();
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                imageView1.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public String getStringImage(Bitmap bmp){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] imageBytes = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
+    }
+    private void uploadImage(String[] pa){
+        final String tvDate=pa[0];
+        final String share1=pa[1];
+
+        class UploadImage extends AsyncTask<Bitmap,Void,String> {
+
+
+
+            ProgressDialog loading;
+            RequestHandler rh = new RequestHandler();
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(AddvideoGetActivity.this, "Uploading Image", "Please wait...",true,true);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
+            }
+
+
+            @Override
+            protected String doInBackground(Bitmap... params) {
+                Bitmap bitmap = params[0];
+
+
+
+                String uploadImage = getStringImage(bitmap);
+
+                HashMap<String,String> data = new HashMap<>();
+                data.put("date",tvDate);
+                data.put("share1",share1);
+                data.put(UPLOAD_KEY, uploadImage);
+
+                String result = rh.sendPostRequest(UPLOAD_URL,data);
+
+                return result;
+            }
+        }
+
+        UploadImage ui = new UploadImage();
+        ui.execute(bitmap);
+    }
+
     public void showDatePickerDialog() {
         // 設定初始日期
         final Calendar c = Calendar.getInstance();
@@ -130,11 +173,28 @@ public class AddvideoGetActivity extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
                         // 完成選擇，顯示日期
-                        tvDate.setText(year + "-" + (monthOfYear + 1) + "-"
+                        date.setText(year + "-" + (monthOfYear + 1) + "-"
                                 + dayOfMonth);
 
                     }
                 }, mYear, mMonth, mDay);
         dpd.show();
+    }
+
+    public void onClick(View v) {
+        String[] p={date.getText().toString(),share.getText().toString()};
+        if (v == chose) {
+            showFileChooser();
+        }
+        if(v == upload){
+            uploadImage(p);
+            Intent resultData = new Intent();
+            resultData.putExtra("date", date.getText().toString());
+            resultData.putExtra("share", share.getText().toString());
+            resultData.putExtra("image", filePath.toString());
+            setResult(1003, resultData);
+            AddvideoGetActivity.this.finish();
+
+        }
     }
 }

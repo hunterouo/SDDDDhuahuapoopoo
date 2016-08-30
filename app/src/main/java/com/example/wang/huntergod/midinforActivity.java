@@ -81,7 +81,12 @@ public class midinforActivity extends AppCompatActivity
             data.putString("address",  resultData.getStringExtra("address"));
             data.putString("html",  resultData.getStringExtra("html"));
             ((inforFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_container)).setTextView(data);
-        }
+        }else if ( resultCode == 1003 ) {
+            Bundle data = new Bundle();//Use bundle to pass data
+            data.putString("date",  resultData.getStringExtra("date"));
+            data.putString("share",  resultData.getStringExtra("share"));
+            data.putString("image",  resultData.getStringExtra("image"));
+            ((videogetFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_container)).setTextView(data);}
     }
 
     
