@@ -76,20 +76,28 @@ public class midinforActivity extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode, Intent resultData) {
         if (resultCode == 1001) {
             Bundle data = new Bundle();//Use bundle to pass data
-            data.putString("homename",  resultData.getStringExtra("homename"));
-            data.putString("email",  resultData.getStringExtra("email"));
-            data.putString("address",  resultData.getStringExtra("address"));
-            data.putString("html",  resultData.getStringExtra("html"));
-            ((inforFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_container)).setTextView(data);
-        }else if ( resultCode == 1003 ) {
+            data.putString("homename", resultData.getStringExtra("homename"));
+            data.putString("email", resultData.getStringExtra("email"));
+            data.putString("address", resultData.getStringExtra("address"));
+            data.putString("html", resultData.getStringExtra("html"));
+            ((inforFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container)).setTextView(data);
+        }  else if ( resultCode == 1002 ) {
+            Bundle data = new Bundle();//Use bundle to pass data
+            data.putString("catname",  resultData.getStringExtra("catname"));
+            data.putString("catgender",  resultData.getStringExtra("catsex"));
+            data.putString("catadopt",  resultData.getStringExtra("catadopt"));
+            data.putString("image",  resultData.getStringExtra("image"));
+            ((catinforFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_container)).setTextView(data);
+        } else if ( resultCode == 1003 ) {
             Bundle data = new Bundle();//Use bundle to pass data
             data.putString("date",  resultData.getStringExtra("date"));
             data.putString("share",  resultData.getStringExtra("share"));
             data.putString("image",  resultData.getStringExtra("image"));
-            ((videogetFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_container)).setTextView(data);}
+            ((videogetFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_container)).setTextView(data);
+        }
     }
 
-    
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
