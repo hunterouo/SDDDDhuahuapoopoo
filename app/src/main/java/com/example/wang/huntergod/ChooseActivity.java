@@ -1,6 +1,8 @@
 package com.example.wang.huntergod;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
@@ -22,6 +24,8 @@ public class ChooseActivity extends AppCompatActivity {
 
     private static final String[] TEXTS = { "灰灰白白貓", "皮卡貓", "稀有品種" };
     private int[] imgRes=new int[]{R.drawable.cat1,R.drawable.cat2,R.drawable.cat3};
+    private int point;
+    private SoundPool soundPool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,12 +66,14 @@ public class ChooseActivity extends AppCompatActivity {
         onSwitch(null);
         preSwitch(null);
 
-
+        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 5);
+        point = soundPool.load(this, R.raw.water_drop, 1);
 
 
         bt1.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(point, 1.0F, 1.0F, 0, 0, 1.0F);
                 if (mPosition==0) {
                     Intent intent = new Intent();
                     intent.setClass(ChooseActivity.this, Choose2Activity.class);

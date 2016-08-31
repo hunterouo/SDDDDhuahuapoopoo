@@ -156,21 +156,5 @@ tools:context="com.example.wang.huntergod.MainActivity">
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#000000"
-        android:id="@+id/relay_video"
-        android:visibility="invisible"
-        >
-
-        <VideoView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/videoView007"
-            />
-    </RelativeLayout>
-
-
 </RelativeLayout>
 

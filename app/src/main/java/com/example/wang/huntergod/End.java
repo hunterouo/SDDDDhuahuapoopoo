@@ -19,7 +19,7 @@ public class End extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //背景音樂
-        mp = MediaPlayer.create(this,R.raw.bearbig);
+        mp = MediaPlayer.create(this,R.raw.diemusic);
         mp.setLooping(false);
         mp.start();
 

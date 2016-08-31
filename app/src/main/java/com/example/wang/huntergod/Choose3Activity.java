@@ -1,8 +1,6 @@
 package com.example.wang.huntergod;
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,14 +19,14 @@ public class Choose3Activity extends AppCompatActivity {
         setContentView(R.layout.activity_choose3);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         iv= (ImageView) findViewById(R.id.image_choose3);
-        myDB = new StatusDB(this, "MyDB", null, 1);
+        /*myDB = new StatusDB(this, "MyDB", null, 1);
 
         changeStatus();
         SQLiteDatabase db = myDB.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("CHOOSE", MainActivity.status[4]);
         db.update("DBtable", values, null, null);
-        myDB.close();
+        myDB.close();*/
 
         iv.setImageResource(R.drawable.shaking_cat2);
         ad= (AnimationDrawable) iv.getDrawable();
@@ -63,9 +61,9 @@ public class Choose3Activity extends AppCompatActivity {
 
 
     }
-    public void  changeStatus(){
+   /* public void  changeStatus(){
         MainActivity.status[4]+=2;
-    }
+    }*/
 
 }
 

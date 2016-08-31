@@ -27,7 +27,6 @@ import android.widget.TextView;
 import android.widget.VideoView;
 
 import java.util.Date;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private MediaPlayer mp;//背景音樂
@@ -39,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton eat_btn,bath_btn,play_btn,brush_btn,poopoo_btn;
     static int[] status=new int[5];
     static StatusDB myDB;
-    private int point;//按鈕聲
+    //按鈕聲
+    private int point;
     private SoundPool soundPool;
     int score=0;
     private RelativeLayout mLayout;
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         handler_poo.removeCallbacks(runnable_poo);
         handler_poo.postDelayed(runnable_poo,30000);
         //音樂
-        mp = MediaPlayer.create(this,R.raw.background);
+        mp = MediaPlayer.create(this,R.raw.appmusic);
         mp.setLooping(true);
         mp.start();
         //貓咪動畫
@@ -254,68 +254,6 @@ public class MainActivity extends AppCompatActivity {
 
         soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 5);
         point = soundPool.load(this, R.raw.water_drop, 1);
-        video007= (VideoView) findViewById(R.id.videoView007);
-        relay= (RelativeLayout) findViewById(R.id.relay_video);
-
-        eat_btn.setOnClickListener(new ImageButton.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                soundPool.play(point, 1.0F, 1.0F, 0, 0, 1.0F);
-                if (status[0] >= 10) {
-                    //出現dialog
-                    final Dialog eat_dialog = new Dialog(MainActivity.this, R.style.selectorDialog);
-                    eat_dialog.setContentView(R.layout.eat_dialog);
-                    Button OK = (Button) eat_dialog.findViewById(R.id.eat_OK_bt);
-                    eat_dialog.show();
-
-                    OK.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            // Close dialog
-                            eat_dialog.dismiss();
-                        }
-                    });
-
-                    status[0]=10;
-                } else {
-                    relay.setVisibility(View.VISIBLE);
-
-                    Random rank = new Random();
-                    int num = rank.nextInt(4) + 1;
-                    video007.setVideoPath("storage/emulated/0/Movies/eat/eat" + num + ".mp4");
-                    video007.setVideoPath("storage/emulated/0/Movies/eat/eat" + num + ".mp4");
-                    video007.requestFocus();
-                    video007.start();
-                    video007.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                        @Override
-                        public void onPrepared(MediaPlayer mp) {
-                            mp.setVolume(0, 0);
-                        }
-                    });
-
-                    video007.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            video007.stopPlayback(); //video007.release();
-                            relay.setVisibility(View.INVISIBLE);
-                        }
-                    });
-
-
-                   /* Intent intent=new Intent();
-                    intent.setClass(MainActivity.this ,Game_video_feed.class);
-                    startActivity(intent);*/
-
-
-
-                    status[0]++;
-                    status[3]++;
-                    score_happy.setText(String.valueOf(status[3]));
-                }
-
-
-            }
-        });
         bath_btn.setOnClickListener(new ImageButton.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -348,6 +286,43 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        eat_btn.setOnClickListener(new ImageButton.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                soundPool.play(point, 1.0F, 1.0F, 0, 0, 1.0F);
+                if (status[0] >= 10) {
+                    //出現dialog
+                    final Dialog eat_dialog = new Dialog(MainActivity.this, R.style.selectorDialog);
+                    eat_dialog.setContentView(R.layout.eat_dialog);
+                    Button OK = (Button) eat_dialog.findViewById(R.id.eat_OK_bt);
+                    eat_dialog.show();
+
+                    OK.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // Close dialog
+                            eat_dialog.dismiss();
+                        }
+                    });
+
+                    status[0]=10;
+                } else {
+
+                    Intent intent=new Intent();
+                    intent.setClass(MainActivity.this ,Game_video_feed.class);
+                    startActivity(intent);
+
+                    status[0]++;
+                    status[3]++;
+                    score_happy.setText(String.valueOf(status[3]));
+                }
+
+
+            }
+        });
+
         play_btn.setOnClickListener(new ImageButton.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -475,6 +450,7 @@ public class MainActivity extends AppCompatActivity {
         questionBt.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                soundPool.play(point, 1.0F, 1.0F, 0, 0, 1.0F);
 
                 final Dialog direction_dialog = new Dialog(MainActivity.this, R.style.DialogTheme);
                 direction_dialog.setContentView(R.layout.direction_dialog);
@@ -484,6 +460,7 @@ public class MainActivity extends AppCompatActivity {
                 q_OK.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        soundPool.play(point, 1.0F, 1.0F, 0, 0, 1.0F);
                         // Close dialog
                         direction_dialog.dismiss();
                     }
@@ -589,8 +566,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     private void startAnimation(){
+        animation_iv= (ImageView) findViewById(R.id.cat_animation_view);
+        AnimationDrawable ad1 = (AnimationDrawable) getResources().getDrawable(
+                R.drawable.cat_video);
+        animation_iv.setBackgroundDrawable(ad1);
+        ad1.start();
+    }
+
+
+
+    /*private void startAnimation(){
         switch(status[4]){
             case 0:
 
@@ -624,7 +610,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-    }
+    }*/
 
     public void changeStatus(){
         if(status[0]>0) {

@@ -2,6 +2,8 @@ package com.example.wang.huntergod;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +23,8 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 public class loginmidActivity extends AppCompatActivity {
+    private int point;
+    private SoundPool soundPool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +33,14 @@ public class loginmidActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setTitle("中途登入");
+        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 5);
+        point = soundPool.load(this, R.raw.water_drop, 1);
 
         Button button5 = (Button) findViewById(R.id.button5);
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                soundPool.play(point, 1.0F, 1.0F, 0, 0, 1.0F);
                 Log.v("Login Result", "start login");
                 EditText username = (EditText)findViewById(R.id.editTextA);
                 EditText password = (EditText)findViewById(R.id.editTextB);

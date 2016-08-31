@@ -38,7 +38,6 @@ public class GameActivity extends AppCompatActivity
         fragmentTransaction.commit();
 
 
-        setTitle("貓咪養成");
         toolbar = (Toolbar) findViewById(R.id.toolbargame);
         toolbar.setTitle("貓咪養成");
 

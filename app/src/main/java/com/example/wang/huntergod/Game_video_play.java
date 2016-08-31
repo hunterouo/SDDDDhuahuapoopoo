@@ -11,6 +11,8 @@ import android.widget.VideoView;
 import java.util.Random;
 
 public class Game_video_play extends Activity implements SurfaceHolder.Callback {
+    private MediaPlayer mp4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +21,12 @@ public class Game_video_play extends Activity implements SurfaceHolder.Callback 
         setContentView(R.layout.activity_game_video_play);
         getWindow().setFormat(PixelFormat.UNKNOWN);
 
+        mp4 = MediaPlayer.create(this,R.raw.videomusic);
+        mp4.setLooping(true);
+        mp4.start();
+
+
         VideoView videoView = (VideoView) findViewById(R.id.videoView004);
-        //String uriPath = "android.resource://example.prgguru.com.myapplication/"+R.raw.ykzzldx;
-       /* String vidaddress =  "http://163.13.201.93";
-        Uri uri = Uri.parse(vidaddress);
-        videoView.setVideoURI(uri);
-        */
 
         Random rank = new Random();
         int num = rank.nextInt(6) + 1;
@@ -45,7 +47,7 @@ public class Game_video_play extends Activity implements SurfaceHolder.Callback 
                 /*Intent intent = new Intent();
                 intent.setClass(Game_video_play.this, MainActivity.class);
                 startActivity(intent);*/
-
+                mp4.stop();
                 Game_video_play.this.finish();
             }
         });

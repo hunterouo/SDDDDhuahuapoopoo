@@ -44,14 +44,14 @@ public class StatusDB extends SQLiteOpenHelper {
         cv.put("BATH", status[1]);
         cv.put("PLAY", status[2]);
         cv.put("HAPPY", status[3]);
-        cv.put("CHOOSE", status[4]);
+        //cv.put("CHOOSE", status[4]);
 
 
         db.update("DBtable", cv, "_id=" + cursor.getInt(1), null);
         db.update("DBtable", cv, "_id=" + cursor.getInt(2), null);
         db.update("DBtable", cv, "_id=" + cursor.getInt(3), null);
         db.update("DBtable", cv, "_id=" + cursor.getInt(4), null);
-        db.update("DBtable", cv, "_id=" + cursor.getInt(5), null);
+       // db.update("DBtable", cv, "_id=" + cursor.getInt(5), null);
 
 
 
@@ -65,7 +65,7 @@ public class StatusDB extends SQLiteOpenHelper {
         cv.put("BATH", 5);
         cv.put("PLAY", 5);
         cv.put("HAPPY", 5);
-        cv.put("CHOOSE", 0);
+        //cv.put("CHOOSE", 0);
 
         db.insert("DBtable", null, cv);
     }

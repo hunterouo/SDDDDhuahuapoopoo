@@ -2,6 +2,8 @@ package com.example.wang.huntergod;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -23,6 +25,8 @@ public class GuideActivity extends Activity implements ViewPager.OnPageChangeLis
     private int[] ids = {R.id.iv1, R.id.iv2, R.id.iv3};
     private List<View> views;
     private Button start_btn;
+    private int point;
+    private SoundPool soundPool;
 
 
     // 底部小点图片
@@ -62,10 +66,15 @@ public class GuideActivity extends Activity implements ViewPager.OnPageChangeLis
         vp = (ViewPager) findViewById(R.id.viewpager);
         vp.setAdapter(vpAdapter);
         // 绑定回调
+
+        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 5);
+        point = soundPool.load(this, R.raw.water_drop, 1);
+
         start_btn = (Button) views.get(2).findViewById(R.id.iv_start_weibo);
         start_btn.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View arg0) {
+                soundPool.play(point, 1.0F, 1.0F, 0, 0, 1.0F);
                 Intent i = new Intent(GuideActivity.this, ChooseActivity.class);
                 startActivity(i);
                 finish();

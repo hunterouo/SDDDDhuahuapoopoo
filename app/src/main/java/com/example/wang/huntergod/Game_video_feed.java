@@ -1,80 +1,90 @@
 package com.example.wang.huntergod;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.Intent;
+import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.MediaController;
-import android.widget.TabHost;
+import android.view.SurfaceHolder;
+import android.view.WindowManager;
 import android.widget.VideoView;
-
-import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.Random;
 
-public class Game_video_feed extends Activity {
-    TabHost th;
+public class Game_video_feed extends Activity implements SurfaceHolder.Callback{
+    private MediaPlayer mp4;
+    /*TabHost th;
     VideoView video;
 
     private GoogleApiClient client;
-    ProgressDialog pDialog;
+    ProgressDialog pDialog;*/
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFormat(PixelFormat.UNKNOWN);
         setContentView(R.layout.activity_game_video_feed);
+
+        mp4 = MediaPlayer.create(this,R.raw.videomusic);
+        mp4.setLooping(true);
+        mp4.start();
+
+
+        VideoView videoView = (VideoView) findViewById(R.id.videoView003);
+
         Random rank = new Random();
         int num = rank.nextInt(4) + 1;
-        video = (VideoView) findViewById(R.id.videoView003);
-        String path1 = "http://163.13.201.93/video/eat/eat"+num+".mp4";
 
-
-        pDialog = new ProgressDialog(Game_video_feed.this);
-        // Set progressbar title
-        pDialog.setTitle("Waiting");
-        // Set progressbar message
-        pDialog.setMessage("Meow~");
-        pDialog.setIndeterminate(false);
-        pDialog.setCancelable(false);
-        // Show progressbar
-        pDialog.show();
-        // Create tabs using XML
-
-        try {
-            MediaController mc = new MediaController(this);
-            mc.setAnchorView(video);
-            mc.setMediaPlayer(video);
-            Uri uri = Uri.parse(path1);
-            //video.setMediaController(mc);
-            video.setVideoURI(uri);
-        }catch (Exception e){
-            Log.e("Error",e.getMessage());
-            e.printStackTrace();
-        }
-        video.requestFocus();
-        video.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-
-
+        videoView.setVideoPath("storage/emulated/0/Movies/eat/eat" + num + ".mp4");
+        videoView.requestFocus();
+        videoView.start();
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
             public void onPrepared(MediaPlayer mp) {
-                pDialog.dismiss();
-                video.start();
+                mp.setVolume(0, 0);
             }
         });
 
-
-        video.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                Intent intent = new Intent();
-                intent.setClass(Game_video_feed.this, MainActivity.class);
-                startActivity(intent);
+                /*Intent intent = new Intent();
+                intent.setClass(Game_video_play.this, MainActivity.class);
+                startActivity(intent);*/
+                mp4.stop();
                 Game_video_feed.this.finish();
             }
         });
+
+     /*   button.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                VideoView videoView = (VideoView) findViewById(R.id.videoView);
+                String uriPath = "android.resource://example.prgguru.com.myapplication/"+R.raw.ykzzldx;
+                Uri uri = Uri.parse(uriPath);
+                videoView.setVideoURI(uri);
+                videoView.requestFocus();
+                videoView.start();
+
+            }
+        });*/
+
+
+    }
+
+    @Override
+    public void surfaceCreated(SurfaceHolder holder) {
+
+    }
+
+    @Override
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
 
     }
     @Override
@@ -83,6 +93,4 @@ public class Game_video_feed extends Activity {
         return;
         //super.onBackPressed();
     }
-
-
 }
