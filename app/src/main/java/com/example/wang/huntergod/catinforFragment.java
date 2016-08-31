@@ -4,6 +4,8 @@ package com.example.wang.huntergod;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +32,7 @@ public class catinforFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(),AddCatActivity.class);
 
-                startActivity(intent);
+                startActivityForResult(intent, 0);
             }
         });
         button9.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +40,7 @@ public class catinforFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(),FixCatActivity.class);
 
-                startActivity(intent);
+                startActivityForResult(intent, 0);
             }
         });
 
@@ -46,6 +48,15 @@ public class catinforFragment extends Fragment {
 
 
         return view;
+    }
+
+
+    public void setTextView( Bundle savedInstanceState)
+    {
+
+        // catinforFragment2 frag = findViewById(R.id.fragment2)
+
+        ((catinforFragment2)getChildFragmentManager().findFragmentById(R.id.fragment2)).setTextView(savedInstanceState);
     }
 
 

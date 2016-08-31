@@ -67,17 +67,10 @@
             android:onClick="loadImagefromGallery"/>
     </TableRow>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="410dp"
-            android:id="@+id/imgView"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-             />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-
-    <TableRow>
         <Button
             style="@style/RDButton"
             android:layout_width="65dp"
@@ -86,7 +79,19 @@
             android:textSize="30dp"
             android:id="@+id/button20"
             android:layout_centerHorizontal="true" />
+    </TableRow>
 
+
+    <TableRow>
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="410dp"
+                android:id="@+id/imgView"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                 />
     </TableRow>
 
 

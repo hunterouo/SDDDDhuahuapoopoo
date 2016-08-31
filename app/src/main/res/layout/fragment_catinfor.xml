@@ -56,7 +56,8 @@ tools:context="com.example.wang.huntergod.catinforFragment"
             android:layout_height="wrap_content"
             android:name="com.example.wang.huntergod.catinforFragment2"
             android:id="@+id/fragment2"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            tools:layout="@layout/fragment_catinfor2" />
     </LinearLayout>
 
 </LinearLayout>

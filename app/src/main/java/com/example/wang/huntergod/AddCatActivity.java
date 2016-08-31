@@ -107,6 +107,7 @@ public class AddCatActivity extends AppCompatActivity implements View.OnClickLis
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
                 imageView.setImageBitmap(bitmap);
+                imageView.bringToFront();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -192,12 +193,12 @@ public class AddCatActivity extends AppCompatActivity implements View.OnClickLis
         }
         if(v == buttonUpload){
             uploadImage(p);
-          Intent resultData = new Intent();
+            Intent resultData = new Intent();
             resultData.putExtra("catname", catname.getText().toString());
             resultData.putExtra("catgender", catsex.getText().toString());
             resultData.putExtra("catadopt", catadopt.getSelectedItem().toString());
-            resultData.putExtra("image", bitmap);
-            setResult(1001, resultData);
+            resultData.putExtra("image", filePath.toString());
+            setResult(1002, resultData);
             AddCatActivity.this.finish();
 
         }

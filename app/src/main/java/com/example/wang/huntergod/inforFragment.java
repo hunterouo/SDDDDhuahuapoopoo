@@ -59,5 +59,6 @@ public class inforFragment extends Fragment {
         text3.setText( html );
     }
 
+
 }
 
