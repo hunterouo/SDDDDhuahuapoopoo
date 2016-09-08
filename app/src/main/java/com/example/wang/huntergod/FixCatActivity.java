@@ -16,10 +16,11 @@ public class FixCatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fix_cat);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("編輯貓咪資訊");
 
         Spinner spinner1 = (Spinner)findViewById(R.id.spinner1);
         Spinner spinner2 = (Spinner)findViewById(R.id.spinner2);
-        Spinner spinner3 = (Spinner)findViewById(R.id.spinner3);
+
 
         //設定功能表項目陣列，使用createFromResource()
 
@@ -35,7 +36,7 @@ public class FixCatActivity extends AppCompatActivity {
 
         spinner1.setAdapter(adapter);
         spinner2.setAdapter(adapter);
-        spinner3.setAdapter(adapter);
+
 
     }
     @Override

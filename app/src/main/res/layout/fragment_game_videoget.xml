@@ -7,11 +7,25 @@
     tools:context="com.example.wang.huntergod.Game_videogetFragment"
     android:background="@drawable/loginpage"
     >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:background="@drawable/sponsor"
+            />
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         >
+
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -25,7 +39,7 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_height="wrap_content"
-                    android:text="XXX中途"
+                    android:text="小童萱中途"
                     android:textSize="30dp"
                     android:layout_weight="1"/>
 
@@ -38,7 +52,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
-                android:background="@drawable/cat1"
+                android:background="@drawable/cat002get"
                 android:id="@+id/imgView01"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
@@ -81,7 +95,7 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_height="wrap_content"
-                    android:text="XXX中途"
+                    android:text="小童萱中途"
                     android:textSize="30dp"
                     android:layout_weight="1"/>
 
@@ -95,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:id="@+id/imgView02"
-                android:background="@drawable/cat1"
+                android:background="@drawable/cat003get"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
@@ -137,7 +151,7 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_height="wrap_content"
-                    android:text="XXX中途"
+                    android:text="詩潁中途"
                     android:textSize="30dp"
                     android:layout_weight="1"/>
 
@@ -151,6 +165,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:id="@+id/imgView03"
+                android:background="@drawable/cat001get"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"

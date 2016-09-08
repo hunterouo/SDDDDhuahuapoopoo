@@ -1,77 +1,88 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="120dp"
-    android:paddingLeft="60dp"
-    android:paddingRight="60dp"
-    android:paddingTop="150dp"
     tools:context="com.example.wang.huntergod.editmidinforActivity"
     android:background="@drawable/bigcatbackground"
+    android:orientation="vertical"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+
     >
-
-    <!-- TODO: Update blank fragment layout -->
-    <TableRow>
-    <TextView
-
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="中途名稱："
-        android:textSize="30dp"
-        android:id="@+id/textView1"
-        />
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:id="@+id/textView2"
-        />
-    </TableRow>
-    <TableRow>
-    <TextView
-        android:layout_height="wrap_content"
-        android:text="聯絡Email："
-        android:textSize="30dp"
-        android:id="@+id/textView"
-        />
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:id="@+id/textView3" />
-    </TableRow>
-    <TableRow>
-    <TextView
-        android:layout_height="wrap_content"
-        android:text="地址："
-        android:textSize="30dp"
-        android:id="@+id/textView6" />
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:id="@+id/textView7" />
-    </TableRow>
-    <TableRow>
-    <TextView
-        android:layout_height="wrap_content"
-        android:text="相關網站："
-        android:textSize="30dp"
-        android:id="@+id/textView8" />
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:id="@+id/textView9" />
-    </TableRow>
-    <TableLayout>
     <Button
-        style="@style/RDButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="編輯"
         android:textSize="30dp"
         android:id="@+id/button6"
-        android:layout_centerHorizontal="true" />
+        style="@style/RDButton"
+        android:layout_gravity="right|top" />
+
+    <TableLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="120dp"
+        android:paddingLeft="70dp"
+        android:paddingRight="60dp"
+        android:paddingTop="130dp"
+        >
+
+        <!-- TODO: Update blank fragment layout -->
+        <TableRow>
+            <TextView
+
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="中途名稱："
+                android:textSize="30dp"
+                android:id="@+id/textView1"
+                />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:id="@+id/textView2"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="聯絡Email："
+                android:textSize="30dp"
+                android:id="@+id/textView"
+                />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:id="@+id/textView3" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="地址："
+                android:textSize="30dp"
+                android:id="@+id/textView6" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:id="@+id/textView7" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="相關網站："
+                android:textSize="30dp"
+                android:id="@+id/textView8" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:id="@+id/textView9" />
+        </TableRow>
+
     </TableLayout>
 
-</TableLayout>
+</FrameLayout>

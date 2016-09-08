@@ -42,7 +42,7 @@ public class midinforActivity extends AppCompatActivity
 
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("APP");
+        toolbar.setTitle("Catdeo");
 
         setSupportActionBar(toolbar);
 

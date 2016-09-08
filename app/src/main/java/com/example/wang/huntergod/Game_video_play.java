@@ -29,9 +29,9 @@ public class Game_video_play extends Activity implements SurfaceHolder.Callback 
         VideoView videoView = (VideoView) findViewById(R.id.videoView004);
 
         Random rank = new Random();
-        int num = rank.nextInt(6) + 1;
+        int num = rank.nextInt(12) + 1;
 
-        videoView.setVideoPath("storage/emulated/0/Movies/play/play" + num + ".mp4");
+        videoView.setVideoPath("storage/emulated/0/Movies/cat1/play/play" + num + ".mp4");
         videoView.requestFocus();
         videoView.start();
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {

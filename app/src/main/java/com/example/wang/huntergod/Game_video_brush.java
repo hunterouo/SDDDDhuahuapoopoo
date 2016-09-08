@@ -4,9 +4,13 @@ import android.app.Activity;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.view.SurfaceHolder;
 import android.view.WindowManager;
+import android.widget.VideoView;
 
-public class Game_video_brush extends Activity {
+import java.util.Random;
+
+public class Game_video_brush extends Activity implements SurfaceHolder.Callback{
     private MediaPlayer mp1;
     private int point;
     private SoundPool soundPool;
@@ -20,6 +24,62 @@ public class Game_video_brush extends Activity {
         mp1 = MediaPlayer.create(this,R.raw.videomusic);
         mp1.setLooping(true);
         mp1.start();
+
+        VideoView videoView = (VideoView) findViewById(R.id.videoView001);
+
+        Random rank = new Random();
+        int num = rank.nextInt(2) + 1;
+
+        videoView.setVideoPath("storage/emulated/0/Movies/cat1/brush/brush" + num + ".mp4");
+        videoView.requestFocus();
+        videoView.start();
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setVolume(0, 0);
+            }
+        });
+
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                /*Intent intent = new Intent();
+                intent.setClass(Game_video_play.this, MainActivity.class);
+                startActivity(intent);*/
+                mp1.stop();
+                Game_video_brush.this.finish();
+            }
+        });
+
+     /*   button.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                VideoView videoView = (VideoView) findViewById(R.id.videoView);
+                String uriPath = "android.resource://example.prgguru.com.myapplication/"+R.raw.ykzzldx;
+                Uri uri = Uri.parse(uriPath);
+                videoView.setVideoURI(uri);
+                videoView.requestFocus();
+                videoView.start();
+
+            }
+        });*/
+
+
+    }
+
+    @Override
+    public void surfaceCreated(SurfaceHolder holder) {
+
+    }
+
+    @Override
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
+
     }
     @Override
     public void onBackPressed() {

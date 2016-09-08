@@ -21,7 +21,7 @@
         <item
             android:id="@+id/videoget"
             android:icon="@drawable/ic_reward"
-            android:title="收穫分享" />
+            android:title="達成成就" />
     </group>
     <item
         android:id="@+id/logout"

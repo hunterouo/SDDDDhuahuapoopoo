@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NavigationGod</string>
+    <string name="app_name">Catdeo</string>
     <string name="spinner_prompt">birthday</string>
     <string name="title_activity_midinfor">midinforActivity</string>
     <string name="title_activity_game">GameActivity</string>

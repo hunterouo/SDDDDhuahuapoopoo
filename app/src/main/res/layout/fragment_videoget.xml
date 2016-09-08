@@ -1,49 +1,96 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.wang.huntergod.videogetFragment"
     android:background="@drawable/loginpage"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    >
 
     <!-- TODO: Update blank fragment layout -->
 
     <Button
-        android:layout_width="80dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="新增"
-
+        android:textSize="30dp"
         android:id="@+id/button20"
-        android:layout_gravity="right" />
+        style="@style/RDButton"
+        android:layout_gravity="right|top" />
 
-    <ImageView
-        android:layout_width="500dp"
-        android:layout_height="500dp"
-        android:id="@+id/imageViewA"
-        android:layout_below="@+id/button20"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:paddingTop="80dp"
+        android:paddingLeft="35dp"
+        >
 
-    <TextView
-        android:layout_width="500dp"
-        android:layout_height="100dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/textView32"
-        android:layout_below="@+id/imageViewA"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <TableRow>
+            <ImageView
+                android:layout_width="220dp"
+                android:layout_height="180dp"
+                android:id="@+id/imageViewA"
+                android:background="@drawable/cat001get"
 
-    <TextView
-        android:layout_width="500dp"
-        android:layout_height="100dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/textView33"
-        android:layout_below="@+id/textView32"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+               />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="140dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:singleLine="false"
+                    android:text="謝謝大家謝謝大家感謝大家謝謝大家感謝"
+                    android:id="@+id/textView32"
+                    android:layout_below="@+id/imageViewA"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:textAppearance="?android:attr/textAppearanceLarge"
+                         android:text="日期："
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="2016/09/07"
+                        android:id="@+id/textView33"
+                        android:layout_below="@+id/textView32"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
 
 
-</RelativeLayout>
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+        </TableRow>
+
+
+
+
+
+    </TableLayout>
+
+
+</FrameLayout>

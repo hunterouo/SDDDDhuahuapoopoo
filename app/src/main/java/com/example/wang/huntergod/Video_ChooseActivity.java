@@ -14,10 +14,12 @@ import android.provider.OpenableColumns;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.VideoView;
 
@@ -30,7 +32,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Video_ChooseActivity extends Activity {
+public class Video_ChooseActivity extends AppCompatActivity {
 
     private static final int SELECT_AUDIO = 2;
     private Uri selectedVideo;
@@ -41,7 +43,11 @@ public class Video_ChooseActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_video__choose);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         choose=(Button)findViewById(R.id.button16);
         complete=(Button)findViewById(R.id.button_video);
 
@@ -73,6 +79,15 @@ public class Video_ChooseActivity extends Activity {
 
 
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.finishmenu, menu);
+        return true;
+    }
+
 
 
     public void UploadVideo(ContentResolver resolver) {
@@ -107,12 +122,6 @@ public class Video_ChooseActivity extends Activity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.finishmenu, menu);
-        return true;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -275,9 +275,9 @@ public class MainActivity extends AppCompatActivity {
 
                     status[1]=10;
                 } else {
-                   /* Intent intent=new Intent();
+                    Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_shower.class);
-                    startActivity(intent);*/
+                    startActivity(intent);
                     status[1]++;
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
@@ -377,33 +377,33 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } else if (poo_3.getVisibility()==View.VISIBLE){
-                    /*Intent intent=new Intent();
+                    Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_cleanpoo.class);
-                    startActivity(intent);*/
+                    startActivity(intent);
                     poo_3.setVisibility(View.INVISIBLE);
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
 
                 }else if (poo_2.getVisibility()==View.VISIBLE){
-                   /* Intent intent=new Intent();
+                    Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_cleanpoo.class);
-                    startActivity(intent);*/
+                    startActivity(intent);
                     poo_2.setVisibility(View.INVISIBLE);
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
 
                 }else if(poo_4.getVisibility()==View.VISIBLE){
-                    /*Intent intent=new Intent();
+                    Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_cleanpoo.class);
-                    startActivity(intent);*/
+                    startActivity(intent);
                     poo_4.setVisibility(View.INVISIBLE);
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
 
                 }else if(poo_1.getVisibility()==View.VISIBLE){
-                    /*Intent intent=new Intent();
+                    Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_cleanpoo.class);
-                    startActivity(intent);*/
+                    startActivity(intent);
                     poo_1.setVisibility(View.INVISIBLE);
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
@@ -433,9 +433,9 @@ public class MainActivity extends AppCompatActivity {
 
                     status[1]=10;
                 } else {
-                    /*Intent intent=new Intent();
+                    Intent intent=new Intent();
                     intent.setClass(MainActivity.this ,Game_video_brush.class);
-                    startActivity(intent);*/
+                    startActivity(intent);
                     status[1]++;
                     status[3]++;
                     score_happy.setText(String.valueOf(status[3]));
@@ -566,17 +566,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+
     private void startAnimation(){
-        animation_iv= (ImageView) findViewById(R.id.cat_animation_view);
-        AnimationDrawable ad1 = (AnimationDrawable) getResources().getDrawable(
-                R.drawable.cat_video);
-        animation_iv.setBackgroundDrawable(ad1);
-        ad1.start();
-    }
-
-
-
-    /*private void startAnimation(){
         switch(status[4]){
             case 0:
 
@@ -591,7 +584,7 @@ public class MainActivity extends AppCompatActivity {
             case 2:
 
                 animation_iv= (ImageView) findViewById(R.id.cat_animation_view);
-                AnimationDrawable ad2 = (AnimationDrawable) getResources().getDrawable(
+               AnimationDrawable ad2 = (AnimationDrawable) getResources().getDrawable(
                         R.drawable.cat_video2);
                 animation_iv.setBackgroundDrawable(ad2);
                 ad2.start();
@@ -610,7 +603,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-    }*/
+    }
 
     public void changeStatus(){
         if(status[0]>0) {

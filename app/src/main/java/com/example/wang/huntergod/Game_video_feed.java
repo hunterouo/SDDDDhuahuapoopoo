@@ -36,7 +36,7 @@ public class Game_video_feed extends Activity implements SurfaceHolder.Callback{
         Random rank = new Random();
         int num = rank.nextInt(4) + 1;
 
-        videoView.setVideoPath("storage/emulated/0/Movies/eat/eat" + num + ".mp4");
+        videoView.setVideoPath("storage/emulated/0/Movies/cat1/eat/eat" + num + ".mp4");
         videoView.requestFocus();
         videoView.start();
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {

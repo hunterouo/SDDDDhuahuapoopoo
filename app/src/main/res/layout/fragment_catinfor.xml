@@ -17,7 +17,9 @@ tools:context="com.example.wang.huntergod.catinforFragment"
         android:id="@+id/list" />!-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
 
         <Button
             style="@style/RDButton"
@@ -25,19 +27,21 @@ tools:context="com.example.wang.huntergod.catinforFragment"
             android:layout_height="wrap_content"
             android:text="新增"
             android:id="@+id/button8"
-            android:layout_alignBottom="@+id/space8"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+             />
 
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="修改"
             android:id="@+id/button9"
             style="@style/RDButton"
-            android:layout_alignBottom="@+id/space8"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
+
+
     </LinearLayout>
 
     <LinearLayout

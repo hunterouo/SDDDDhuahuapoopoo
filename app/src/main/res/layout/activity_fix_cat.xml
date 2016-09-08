@@ -21,26 +21,21 @@
             android:layout_width="120sp"
             android:layout_height="120sp"
             android:id="@+id/imageView1"
-            android:background="@drawable/cat"
+            android:background="@drawable/cat001"
             android:layout_gravity="center_horizontal" />
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="60dp" />
         <ImageView
             android:layout_width="120sp"
             android:layout_height="120sp"
             android:id="@+id/imageView2"
-            android:background="@drawable/cat"
+            android:background="@drawable/cat002"
             android:layout_gravity="center_horizontal" />
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
-        <ImageView
-            android:layout_width="120sp"
-            android:layout_height="120sp"
-            android:id="@+id/imageView3"
-            android:background="@drawable/cat"
-            android:layout_gravity="center_horizontal" />
+            android:layout_height="50dp" />
+
     </LinearLayout>
 
     <RelativeLayout
@@ -91,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
+            android:text="大頭"
             android:id="@+id/textView11"
             android:layout_below="@+id/relativeLayout"
             android:layout_toRightOf="@+id/textView10"
@@ -120,7 +115,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
+            android:text="母"
             android:id="@+id/textView13"
             android:layout_below="@+id/textView10"
             android:layout_alignParentRight="true"
@@ -176,7 +171,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text=""
+            android:text="莉娜"
             android:id="@+id/textView17"
             android:layout_alignTop="@+id/space4"
             android:layout_alignParentRight="true"
@@ -206,7 +201,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
+            android:text="母"
             android:id="@+id/textView19"
             android:layout_below="@+id/textView16"
             android:layout_alignParentRight="true"
@@ -240,75 +235,8 @@
             android:id="@+id/space0"
             android:layout_alignTop="@+id/textView20" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="名字："
-            android:id="@+id/textView22"
-            android:layout_below="@+id/space0"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/textView23"
-            android:layout_alignBottom="@+id/space2"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_toRightOf="@+id/textView22"
-            android:layout_toEndOf="@+id/textView22" />
 
-        <Space
-            android:layout_width="20px"
-            android:layout_height="20px"
-            android:layout_below="@+id/textView22"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/space2" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="性別："
-            android:id="@+id/textView24"
-            android:layout_below="@+id/space2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/textView25"
-            android:layout_below="@+id/textView22"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_toRightOf="@+id/textView22"
-            android:layout_toEndOf="@+id/textView22" />
-
-        <Space
-            android:layout_width="20px"
-            android:layout_height="20px"
-            android:layout_below="@+id/textView24"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/space20" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="領養："
-            android:id="@+id/textView26"
-            android:layout_below="@+id/space20"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
 
         <Spinner
             android:layout_width="wrap_content"
@@ -328,14 +256,6 @@
             android:layout_toEndOf="@+id/textView20"
             android:layout_alignBottom="@+id/textView20" />
 
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinner3"
-            android:layout_alignTop="@+id/textView26"
-            android:layout_toRightOf="@+id/textView26"
-            android:layout_toEndOf="@+id/textView26"
-            android:layout_alignBottom="@+id/textView26" />
 
 
     </RelativeLayout>

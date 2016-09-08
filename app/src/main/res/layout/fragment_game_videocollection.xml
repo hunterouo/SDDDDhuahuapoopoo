@@ -33,6 +33,7 @@
         <ImageView
             android:layout_height="100dp"
             android:layout_width="100dp"
+            android:background="@drawable/home"
             android:scaleType="centerInside"
             />
         <LinearLayout
@@ -47,7 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="小童詩中途"
+                android:text="小童萱中途"
                 android:textSize="25dp"
                 />
             <TextView
@@ -91,6 +92,7 @@
             android:layout_height="100dp"
             android:layout_width="100dp"
             android:scaleType="centerInside"
+            android:background="@drawable/home"
             />
         <LinearLayout
             android:layout_width="wrap_content"
@@ -104,7 +106,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="小童詩中途"
+                android:text="小童萱中途"
                 android:textSize="25dp"
                 />
             <TextView
@@ -148,6 +150,7 @@
             android:layout_height="100dp"
             android:layout_width="100dp"
             android:scaleType="centerInside"
+            android:background="@drawable/home"
             />
         <LinearLayout
             android:layout_width="wrap_content"
@@ -161,7 +164,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="小童詩中途"
+                android:text="小童萱中途"
                 android:textSize="25dp"
                 />
             <TextView
