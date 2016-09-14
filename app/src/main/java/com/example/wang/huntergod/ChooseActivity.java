@@ -23,7 +23,7 @@ public class ChooseActivity extends AppCompatActivity {
     private int mPosition = 0;
 
     private static final String[] TEXTS = { "大頭", "莉娜", "尼哥" };
-    private int[] imgRes=new int[]{R.drawable.cat003,R.drawable.cat002,R.drawable.cat004};
+    private int[] imgRes=new int[]{R.drawable.cat003,   R.drawable.cat002,R.drawable.cat004};
     private int point;
     private SoundPool soundPool;
 

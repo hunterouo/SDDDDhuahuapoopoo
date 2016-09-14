@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.InputStream;
-import java.util.HashMap;
 
 
 /**
@@ -36,7 +35,7 @@ public class videogetFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_videoget, container, false);
-        text = (TextView)view.findViewById(R.id.textView32);
+        text = (TextView)view.findViewById(R.id.textView0033);
         text1 = (TextView)view.findViewById(R.id.textView33);
         image1 = (ImageView)view.findViewById(R.id.imageViewA);
         Button button20 = (Button) view.findViewById(R.id.button20);
@@ -63,8 +62,8 @@ public class videogetFragment extends Fragment {
             shareImage = ResourcesCompat.getDrawable(getResources(), R.drawable.blackcat03, null);
         }
 
-        text.setText( date );
-        text1.setText( share );
+        text.setText( share );
+        text1.setText( date );
         image1.setImageDrawable( shareImage );
 
     }

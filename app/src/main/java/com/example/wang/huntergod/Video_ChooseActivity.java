@@ -73,6 +73,8 @@ public class Video_ChooseActivity extends AppCompatActivity {
                     UploadVideo(v.getContext().getContentResolver());
 
                 }
+
+                finish();
             }
         });
 

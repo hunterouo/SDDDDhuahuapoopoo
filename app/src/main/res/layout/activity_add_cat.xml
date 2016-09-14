@@ -80,21 +80,13 @@
             android:id="@+id/button20"
             android:layout_centerHorizontal="true" />
     </TableRow>
-
-
-    <TableRow>
-
-        <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="410dp"
-                android:id="@+id/imgView"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                 />
-    </TableRow>
-
-
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="410dp"
+        android:id="@+id/imgView"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        />
 
 </TableLayout>

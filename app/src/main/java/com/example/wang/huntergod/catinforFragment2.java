@@ -27,16 +27,16 @@ public class catinforFragment2 extends ListFragment {
     public catinforFragment2() {
         // Required empty public constructor
     }
-    String[] name ={"大頭","莉娜"
+    String[] name ={"大頭","莉娜","尼哥"
 
     };
-    int[] cat = {R.drawable.cat001,R.drawable.cat002
+    int[] cat = {R.drawable.cat001,R.drawable.cat002,R.drawable.cat003
 
     };
-    String[] sex ={"母","母"
+    String[] sex ={"母","母","男"
 
     };
-    String[] adopt ={"已領養","已領養"
+    String[] adopt ={"已領養","已領養","未領養"
 
     };
     ArrayList<HashMap<String,Object>> data=new ArrayList<HashMap<String, Object>>();

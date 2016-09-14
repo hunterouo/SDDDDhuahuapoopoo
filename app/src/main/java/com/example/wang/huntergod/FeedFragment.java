@@ -7,13 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.GridView;
 import android.widget.ImageSwitcher;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,7 +31,7 @@ public class FeedFragment extends Fragment {
 
     private GridView gridView;
     private int[] image = {
-            R.drawable.cat, R.drawable.flower, R.drawable.hippo,
+            R.drawable.video_picture, R.drawable.flower, R.drawable.hippo,
             R.drawable.monkey, R.drawable.mushroom, R.drawable.panda,
             R.drawable.rabbit, R.drawable.raccoon
     };
@@ -70,7 +68,7 @@ public class FeedFragment extends Fragment {
                 items, R.layout.gridviewitem, new String[]{"image", "text"},
                 new int[]{R.id.image, R.id.text});
 
-        gridView = (GridView) view.findViewById(R.id.main_page_gridview);
+       /* gridView = (GridView) view.findViewById(R.id.main_page_gridview);
         gridView.setNumColumns(3);
         gridView.setAdapter(adapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -80,7 +78,7 @@ public class FeedFragment extends Fragment {
                         Toast.LENGTH_SHORT).show();
             }
 
-        });
+        });*/
         return view;
 
 

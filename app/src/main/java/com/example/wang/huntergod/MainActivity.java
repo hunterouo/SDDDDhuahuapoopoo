@@ -524,7 +524,7 @@ public class MainActivity extends AppCompatActivity {
 
         menu.add(0,0,0,"選單");
 
-        menu.add(0,2,0,"影片收藏");
+        //menu.add(0,2,0,"影片收藏");
 
         menu.add(0,1,1,"離開");
 

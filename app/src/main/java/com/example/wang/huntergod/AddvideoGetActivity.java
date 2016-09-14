@@ -115,7 +115,7 @@ public class AddvideoGetActivity extends AppCompatActivity implements View.OnCli
     }
     private void uploadImage(String[] pa){
         final String tvDate=pa[0];
-        final String share1=pa[1];
+        final String share=pa[1];
 
         class UploadImage extends AsyncTask<Bitmap,Void,String> {
 
@@ -147,7 +147,7 @@ public class AddvideoGetActivity extends AppCompatActivity implements View.OnCli
 
                 HashMap<String,String> data = new HashMap<>();
                 data.put("date",tvDate);
-                data.put("share1",share1);
+                data.put("share",share);
                 data.put(UPLOAD_KEY, uploadImage);
 
                 String result = rh.sendPostRequest(UPLOAD_URL,data);
@@ -190,7 +190,7 @@ public class AddvideoGetActivity extends AppCompatActivity implements View.OnCli
             uploadImage(p);
             Intent resultData = new Intent();
             resultData.putExtra("date", date.getText().toString());
-            resultData.putExtra("share1", share.getText().toString());
+            resultData.putExtra("share", share.getText().toString());
             resultData.putExtra("image", filePath.toString());
             setResult(1003, resultData);
             AddvideoGetActivity.this.finish();
